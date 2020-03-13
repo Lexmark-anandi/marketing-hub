@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+#navigation {
+	height: 25px;
+	padding: 0px 0 0px 0px;
+}
+
+.navLeft {
+	float: left;
+}
+#navigationOuter ul {
+    margin: 0px;
+    padding: 0px;
+}
+#navigationOuter ul li {
+    display: block;
+    float: left;
+    line-height: 1em;
+    list-style-type: none;
+    margin: 0px 5px 0px 0px;
+    color: #333333;
+    padding: 10px 15px;
+    font-size: 130%;
+    border-radius: 3px;
+	cursor: pointer;
+}
+#navigationOuter .navHover {
+    background-color: #e6e6f0;
+}
+#navigationOuter .navActive {
+    background-color: #00c425;
+	font-weight: 700;
+}
+
+/* Level 2 senkrecht */
+/*#navigation ul li ul {
+	display: none;
+	position: absolute;
+	top: 24px; 
+	z-index: 9999;
+	padding: 5px 0 10px 0;
+    margin: 0px 0 0 0px;
+	text-align: left;
+	background-color: #dddddd;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+}
+#navigation li ul li {
+	float: none;
+	display: block;
+    margin: 0px 0 0px 0px;
+    width: auto;
+	white-space: nowrap; 
+	font-size: 100%;
+}
+#navigation li ul li div {
+    padding: 5px 20px 5px 15px;
+}
+
+
+#navigation .navLeft .navActiveMain {
+    text-decoration: none;
+    color: #333333;
+    background-color: rgba(163,141,125,0.3);
+}
+#navigation .navActive {
+    text-decoration: none;
+    background-color: rgba(163,141,125,0.3);
+}
+.iconSubmenue {
+	background-image: none;
+	background-repeat: no-repeat;
+    background-position: right 10px center;
+	background-size: 18px 13px;
+}
+.menueCloseMain {
+	display: none !important;
+	background-color: #666666;
+    color: #ffffff !important;
+    background-image: url(../img/arrow-left-ffffff.png);
+    background-repeat: no-repeat;
+    background-size: 10px 20px;
+    background-position: 10px center;
+    padding-left: 20px;
+	padding-top: 1px;
+}
+.menueClose {
+	display: none !important;
+	background-color: #666666;
+    background-image: url(../img/arrow-left-ffffff.png);
+    background-repeat: no-repeat;
+    background-size: 10px 20px;
+    background-position: 10px center;
+    padding-left: 20px;
+	padding-top: 1px;
+    color: #ffffff !important;
+}
+#navigation .menueCloseMain .navHover,
+#navigation .menueClose .navHover {
+	color: #ffffff !important;
+}
+*/
+
+
+/* Profile */
+.navRight {
+	float: right;
+}
+.navRight ul li {
+    margin: 0px 0px 0px 5px !important;
+	font-size: 110% !important;
+}
+
+
+
+#navFeedback {
+	float: right;
+}
+
+#navFeedback ul {
+    margin: 0px;
+    padding: 0px;
+}
+#navFeedback ul li {
+    display: block;
+    float: left;
+    line-height: 1em;
+    list-style-type: none;
+    margin: 0px 5px 0px 0px;
+    color: #333333;
+    padding: 10px 15px;
+    font-size: 100%;
+    border-radius: 3px;
+	cursor: pointer;
+}
+#navFeedback .navHover {
+    background-color: #e6e6f0;
+}
+#navFeedback .navActive {
+}
+
+
+

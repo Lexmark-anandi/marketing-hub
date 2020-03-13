@@ -1,0 +1,539 @@
+@charset "utf-8";
+
+/* #### STANDARD FORM #### */
+.formRow {
+	clear: both;
+    margin: 0px 0 5px 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
+.formRowHidden {
+	display: none;
+}
+.formRowSpace {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.formRowNoBorder {
+    border-bottom-width: 0px;
+}
+.formLabel {
+	float: left;
+	width: 190px;  
+	padding: 3px 0 0 0;
+}
+.formLabelFullwidth {
+	float: none;
+	width: 100%;
+}
+.formField {
+	margin-left: 200px;
+}
+.formFieldFullwidth {
+	margin-left: 0px;
+}
+
+.textfield {
+	width: 100%;
+	border: 1px solid #999;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+	padding: 1px 5px;
+	box-sizing: border-box;
+    color: #333333;
+}
+.textfieldUpload {
+	padding: 0px;
+	background-color: #fff;
+}
+.formRowReadonly {
+	color: #aaaaaa;
+}
+.formRowReadonly .textfield {
+	border-width: 0px;
+	background-color: transparent;
+	height: auto !important;
+	padding-left: 0;
+	color: #aaaaaa;
+}
+.formRowReadonly .textfield p {
+	margin: 0 0 1em 0;
+}
+.formRowReadonly .textfield + .cke {
+	display: none
+}
+.textfieldReadRadio,
+.formRowReadonly select.textfield {
+	/*position: absolute;
+	left: -10000px;*/
+}
+.inlineRadiofield {
+	display: inline-block;
+	margin-right: 20px;
+}
+textarea {
+	resize: none;
+}
+.h50 {
+	height: 50px;
+}
+.h75 {
+	height: 75px;
+}
+.h100 {
+	height: 100px;
+}
+.h150 {
+	height: 150px;
+}
+.h200 {
+	height: 200px;
+}
+.h500 {
+	height: 500px;
+}
+.hFull {
+	height: 100%;
+}
+.w50 {
+	width: 50px !important;
+}
+.formButton {
+	cursor: pointer;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+	/*background-color: #cccccc;*/
+    border: 1px solid #999999;
+    color: #000000;
+    margin-left: 20px;
+    padding: 2px 0px;
+    width: 150px;
+	background: #cccccc; /* Old browsers */
+	background: -moz-linear-gradient(top, #fefefe 0%, #dddddd 67%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #fefefe 0%,#dddddd 67%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #fefefe 0%,#dddddd 67%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+.formButton:hover {
+	background: #cccccc;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 67%);
+	background: -webkit-linear-gradient(top, #eeeeee 0%,#dddddd 67%);
+	background: linear-gradient(to bottom, #eeeeee 0%,#dddddd 67%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 );
+}
+.formButton:active,
+.formButton:focus {
+	/*background: #cccccc;
+	background: -moz-linear-gradient(top, #dddddd 33%, #fefefe 100%);
+	background: -webkit-linear-gradient(top, #dddddd 33%,#fefefe 100%);
+	background: linear-gradient(to bottom, #dddddd 33%,#fefefe 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#fefefe',GradientType=0 );*/
+}
+.formButtonRight {
+	float: right;
+}
+.formButtonLeft {
+	margin-left: 0;
+}
+.tabModulFilter label,
+.tabFormFilter label {
+	display: none;
+}
+.tabModulFilter .textfield,
+.tabFormFilter .textfield {
+	width: 150px;
+}
+.wModulFilterOuter,
+.wFormFilterOuter {
+	width: 150px;
+	margin-right: 10px;
+	overflow: hidden;
+	display: inline-block;
+}
+.wModulFilterDisabled .textfield,
+.wFormFilterDisabled .textfield {
+	border-color: #d9d9d9 !important;
+	background-color: #d9d9d9 !important;
+	width: 200px;
+}
+
+.modulIcon {
+	display: inline-block; 
+	margin-right: 5px;
+	box-sizing: border-box;
+}
+.modulIconForm {
+	margin-right: 0px;
+	margin-left: 5px;
+}
+.modulIconBox {
+    border: 1px solid #999999;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+.modulIconFloatRight {
+	float: right;
+}
+.childmodul .gridExpandAll {
+    margin-top: -1px;
+    height: 21px;
+}
+.modulIcon .fa{
+}
+
+.modulIcon:hover {
+	color: #999999;
+	cursor: pointer;
+}
+.tabFormFilter .modulIconBox .fa {
+	margin: 4px 0 0 4px;
+}
+.tabFormFilter .modulIconBox .fa-window-maximize {
+	margin-left: 3px;
+}
+
+/*.gridButton {
+	cursor: pointer;
+	background-image: url(../img/ui-icons_222222_256x240.png);
+	background-repeat: no-repeat;
+	width: 18px;
+	height: 18px;
+	display: inline-block; 
+	border: 1px solid #999999;
+	margin-right: 5px;
+	padding: 2px 0 0 2px;
+	box-sizing: border-box;
+}
+.gridButtonAll {
+	float: right;
+}
+.gridButton:hover {
+	background-image: url(../img/ui-icons_2e83ff_256x240.png);
+	border: 1px solid rgba(163,141,125,1);
+}*/
+.formNavButtonDisabled {
+    opacity: 0.5;
+    cursor: default !important;
+	color: #333333 !important;
+}
+/*.gridButton.formNavButtonDisabled:hover {
+    background-image: url(../img/ui-icons_222222_256x240.png);
+    border: 1px solid #999999;
+	color: #999999;
+}
+*/
+
+.formContent {
+    border-top: 1px solid #aaa;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+.formLeft {
+    position: absolute;
+    top: 0px;
+	width: 550px;
+	bottom: 0px;
+    left: 0px;
+    background-color: #f0f0f0;
+}
+.formLeftInner {
+    height: 100%;
+    overflow-y: auto;
+}
+.formMiddle {
+    width: 20px;
+    position: absolute;
+    top: 0px;
+	bottom: 0px;
+    left: 550px;
+    background-color: #d9d9d9;
+    z-index: 100;
+    background-image: url(../img/assigned_open.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+.formMiddleClose {
+    position: absolute;
+    width: 20px;
+    top: 0px;
+	bottom: 0px;
+    left: 30px;
+    background-color: #d9d9d9;
+    background-image: url(../img/assigned_close.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+	transition: left 0.3s ease-out; 
+}
+.formMiddleCloseHide {
+	left: 50px;
+	transition: left 0.3s ease-out; 
+}
+.formMiddleDeactive {
+	background-image: none; 
+}
+.formChildmodulClose {
+	background: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 50px;
+    top: 0px;
+	bottom: 0px;
+    left: 0px;
+}
+.formRight {
+    position: absolute;
+    margin: 0 0 0 20px; 
+    padding: 0;
+    top: 0px;
+    right: 0px;
+    left: 550px;
+	bottom: 0px;
+    background-color: #ffffff;
+}
+.formRightInner {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.formTabs {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #999999;
+    z-index: 10;
+}
+.formLeft .formTabs {
+    background-color: #f0f0f0;
+}
+.formFooter {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #999999;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.formLeft .formFooter {
+    background-color: #f0f0f0;
+}
+.formTabs ul {
+    margin: 0;
+    padding: 10px 10px 0px 10px;
+	position: relative;
+	overflow: hidden;
+}
+.formTabs li {
+    float: left;
+    margin: 1px 1px 1px 1px;
+    padding: 5px 22px 5px 4px;
+    cursor: pointer;
+    border-top: solid 1px #999999;
+    border-left: solid 1px #999999;
+    border-right: solid 1px #999999;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 78%, #f9f9f9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(78%,#ffffff), color-stop(100%,#f9f9f9));
+    background: -webkit-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: -o-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: -ms-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: linear-gradient(to bottom, #ffffff 78%,#f9f9f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 );
+    list-style-type: none;
+}
+
+.formTabs .active {
+
+    background: #cccccc;
+    background: -moz-linear-gradient(top, #cccccc 78%, #f9f9f9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(78%,#cccccc), color-stop(100%,#f9f9f9));
+    background: -webkit-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: -o-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: -ms-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: linear-gradient(to bottom, #cccccc 78%,#f9f9f9 100%);
+}
+.formTabIconError {
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+}
+
+.fieldset {
+    position: absolute;
+    top: 0px;
+	right: 100%;
+    bottom: 0px;
+    left: 0px;
+    border-width: 0;
+    overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.fieldsetActive {
+    right: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+    overflow-y: auto;
+} 
+.fieldsetActive.fieldsetFullWidth {
+	width: 100% !important;
+}
+.formComponentsForm .fieldset {
+	top: 65px;
+}
+
+.formInlineblock {
+	display: inline-block;
+}
+.formButtonUpload {
+    margin-left: 0px;
+    border-width: 0px;
+    border-right-width: 1px;
+    text-align: left;
+    padding: 2px 10px;
+}
+
+.fileUploadOuter {
+	position: relative;
+	height: 18px;
+	font-size: 95%;
+	overflow: hidden;
+	/*background-color: #efefef;*/
+}
+.uploadOverlay .fileUploadOuter {
+	background-color: #efefef;
+}
+.uploadOverlay .fileUploadDelete {
+	display: none;
+}
+.fileUploadedOuter {
+	position: relative;
+	height: 18px;
+	overflow: hidden;
+}
+.fileUploadedOuterThumb {
+	height: auto !important;
+}
+.formField .fileUploadedOuter:last-child {
+	border-bottom: 1px dotted #ccc;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+}
+.formFieldRead .fileUploadedOuter:last-child {
+	border-bottom-width: 0px;
+}
+.fileUploadProgressbar {
+	width: 0%;
+	height: 18px;
+	background-color: #dabaa2;
+}
+.fileUploadFilename {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 30px;
+	bottom: 0px;
+	padding: 2px 0 0 2px;
+}
+.fileUploadedOuterThumb .fileUploadFilename {
+	left: 100px;
+}
+.fileUploadFunctions,
+.fileUploadDelete {
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	right: 0px;
+	bottom: 0px;
+	text-align: right;
+}
+.fileUploadDelete span {
+	float: right;
+	cursor: pointer;
+}
+.uploadOverlay {
+	position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+input[type="button" i]:disabled, input[type="submit" i]:disabled, input[type="reset" i]:disabled, input[type="file" i]:disabled::-webkit-file-upload-button, button:disabled, select:disabled, keygen:disabled, optgroup:disabled, option:disabled, select[disabled] > option {
+    color: #333333;
+}
+
+.dialogOuter fieldset {
+    position: relative;
+    margin: 0;
+    padding: 0 0px;
+    box-sizing: border-box;
+    width: 100%;
+	border-width: 0;
+    overflow: hidden;
+}
+.dialogOuter .ui-multiselect ul.selected,
+.dialogOuter .ui-multiselect ul.available {
+    padding-bottom: 1px;
+}
+.dialogOuter .ui-multiselect div.selected {
+	border-right: 1px solid #999999;
+}
+.dialogOuter .ui-multiselect div.available {
+	border-left: none;
+}
+.formRowSelectAssign {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	padding: 0;
+	border-bottom-width: 0;
+}
+.selectassignNote {
+	margin-bottom: 10px;;
+}
+.selectassign {
+	position: absolute;
+	left: -10000px;
+}
+.listassignvisible {
+	display: list-item;
+}
+.listassignhidden {
+	display: none;
+}
+.searchhidden {
+	display: none;
+}
+.assignButtonHeader {
+	float: right;
+	padding: 7px;
+}
+ul.availablegroups li.assignpersons {
+	display: none;
+}
+ul.availablepersons li.assigngroups {
+	display: none;
+}

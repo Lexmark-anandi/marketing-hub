@@ -1,0 +1,850 @@
+@charset "utf-8";
+
+/* #### CUSTOMIZED CSS #### */
+#loginLogo {
+	background-image: url(../../../custom/admin/img/lexmark_black.png);
+	background-size: 70%;
+}
+#loginToolname {
+    color: rgba(0,138,68,1);
+}
+
+#header {
+	background-color: #32323C;
+} 
+#apptitle {
+	background-image: url(../../../custom/admin/img/logo.png);
+	background-size: 16px 16px;
+    background-position: 10px 4px;
+}
+#navigation .navLeft .navActiveMain {
+    background-color: rgba(250,165,25,0.3);
+}
+#navigation .navHover {
+    background-color: rgba(250,165,25,0.1);
+}
+#navigation .navRight > li > .navHover {
+}
+#navigation .navActive {
+    background-color: rgba(250,165,25,0.3); 
+}
+
+
+.formgeogroup {
+	font-weight: bold;
+	padding: 20px 0 3px 0 !important;
+}
+.tablegeogroup {
+}
+
+.formTemplateCategoryBanner div {
+	display: none;
+}
+.countryTable {
+	display: table;
+}
+.countryTableRow {
+	display: table-row;
+}
+.countryTableRowNoBorder {
+}
+.countryTableCell {
+	display: table-cell;
+	padding: 1px 10px 1px 0;
+}
+.countryTableRowBorder .countryTableCell {
+	border-top: 1px solid #CCCCCC;
+}
+.countryTableCellBox {
+}
+.countryTableCellCountry {
+}
+.countryTableCellLanguage {
+}
+.countryTableCellPreview {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.countryTableCellMaster {
+}
+.countryTableMaster {
+	color: #cc0000;
+}
+.countryTableCellPages {
+	text-align: center;
+}
+
+.formComponentsOuter {
+	width: 100%;
+    height: 100%;
+}
+.formComponentsTop {
+	position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0px;
+    left: 0px;
+    border-width: 0;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.formComponentsInner {
+	position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+	width: 100%;
+}
+.formComponentsBottom {
+	position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #999999;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.formComponentsThumbnails {
+	position: absolute;
+    top: 0px;
+    width: 100px;
+    bottom: 0px;
+    left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid #999;
+	background-color: #cccccc;
+	z-index: 100;
+}
+.formComponentThumbgroup {
+	border-bottom: 1px solid #999999;
+	margin-bottom: 10px;
+}
+.formComponentThumbgroupHead {
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 5px;
+}
+.formComponentThumbOuter {
+    padding: 10px 0;
+}
+.formComponentThumbOuterHover {
+    background-color: #dddddd;
+	cursor: pointer;
+}
+.formComponentThumbOuterActive {
+    background-color: #eeeeee !important;
+}
+
+.formComponentThumb {
+	max-width: 70px;
+	max-height: 100px;
+    display: block;
+	text-align: center;
+	margin: 0 auto 3px auto;
+}
+.formComponentThumb img {
+	max-width: 100%;
+	max-height: 100px;
+	display: block;
+    border: 1px solid #999999;
+	margin: 0 auto;
+}
+.formComponentPage {
+	text-align: center;
+	line-height: 1em;
+}
+.formComponentThumbOuterEditable .formComponentPage {
+	color: #090;
+	font-weight: bold;
+}
+.formComponentThumbOuterEditable .formComponentPage:after {
+	content: '\e066';
+	font-family: 'Lexicons';
+	color: #faa519;
+	padding-left: 3px;
+}
+.formComponentsPreview {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 100px;
+	background-color: #cccccc;
+}
+.formComponentsPreview img {
+}
+.formComponentPreviewOuter {
+	max-width: 100%;
+	max-height: 100%;
+}
+.formComponentPreviewBackground {
+	position: absolute;
+    top: 0px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+	background-color: #ffffff;
+}
+.formComponentPreviewBackground img {
+	max-width: 100%;
+	max-height: 100%;
+	border-bottom: 1px solid #333333;
+	opacity: 0.4;
+}
+.formComponentPreviewComponents {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+	overflow: hidden;
+}
+.formComponentsTools {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    min-width: 400px;
+	display: none;
+	background-color: #ffffff;
+	z-index: 10;
+}
+.formComponentsComponents {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-left: 1px solid #999;
+	background-color: #cccccc;
+}
+.formComponentsForm {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.formComponentOuter {
+	padding: 10px 0;
+	padding: 5px 0;
+}
+.formComponentOuterHover {
+    background-color: #dddddd;
+	cursor: pointer;
+}
+.formComponentOuterActive {
+    background-color: #ffffff;
+}
+.formComponent {
+	width: 40px;
+	height: 40px;
+    margin: 0 auto 0px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	
+	
+	background-color: #F9F;
+
+	width: 40px;
+    height: 30px;
+    margin: 0 auto 0px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #aaa;
+
+}
+.formComponent1 {
+    background-image: url(../img/textfield.png);
+}
+.formComponent2 {
+    background-image: url(../img/pricefield.png);
+}
+.formComponent3 {
+    background-image: url(../img/productname2.png);
+}
+.formComponent4 {
+    background-image: url(../img/pn.png);
+}
+.formComponent5 {
+    background-image: url(../img/description.png);
+}
+.formComponent6 {
+    background-image: url(../img/description25-3.png);
+}
+.formComponent7 {
+    background-image: url(../img/description50-3.png);
+}
+.formComponent8 {
+    background-image: url(../img/description100-3.png);
+}
+.formComponent9 {
+    background-image: url(../img/productcategory2.png);
+}
+.formComponent10 {
+    background-image: url(../img/partnercontact.png);
+}
+.formComponent11 {
+    background-image: url(../img/partnerlogo.png);
+}
+.formComponent12 {
+    background-image: url(../img/productimage3.png);
+}
+.formComponent13 {
+    background-image: url(../img/tagline.png);
+}
+.formComponent14 {
+    background-image: url(../img/wysiwyg.png);
+}
+.formComponent15 {
+    background-image: url(../img/fileupload.png);
+}
+.formComponent16 {
+    background-image: url(../img/partnercontactlogo.png);
+}
+.formComponent17 {
+    background-image: url(../img/textmoduls.png);
+}
+.formComponent18 {
+    background-image: url(../img/colorarea.png);
+}
+
+.compboxOuter {
+	position: absolute;
+	border: 1px dashed #999999;
+	overflow: hidden;
+	z-index: 10;
+	line-height: 1.5;
+}
+.compboxOuterActive {
+	border: 1px solid #999999;
+	-webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.5);
+}
+.compboxOuter .content {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+}
+.compboxOuter .content p {
+	margin: 0 0 1em 0;
+}
+.compboxOuter .content p span {
+	/**line-height: 175%;**/
+}
+
+.formComponentHeadline {
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #999;
+}
+.formComponentsForm .formLabel {
+	width: 140px;
+}
+.formComponentsForm .formField {
+	margin-left: 150px;
+}
+
+.compboxOuter {
+	font-family: Hero, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+    /**line-height: 180%;**/
+	display: table;
+}
+
+.verticalaligntop .content {
+	vertical-align: top;
+}
+.verticalalignmiddle .content {
+	vertical-align: middle;
+}
+.verticalalignbottom .content {
+	vertical-align: bottom;
+}
+
+
+
+/* Banner - Textfield */
+.comboxOuter_1_1 {
+    /**line-height: 150%;**/
+}
+/* Banner - Short Description */
+.comboxOuter_1_5 {
+    /**line-height: 150%;**/
+}
+/* Banner - 25 Description */
+.comboxOuter_1_6 {
+    /**line-height: 150%;**/
+}
+/* Banner - 50 Description */
+.comboxOuter_1_7 {
+    /**line-height: 150%;**/
+}
+/* Banner - 100 Description */
+.comboxOuter_1_8 {
+    /**line-height: 150%;**/
+}
+
+.descmaxchars {
+	font-size: 90%;
+	font-style: italic;
+}
+.componentPartnerlogo {
+	width: 100%;
+	height: auto;
+	background-image: url(../img/dummy-logo.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.componentProductimage {
+	width: 100%;
+	height: auto;
+	background-image: url(../img/dummy-product.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.componentUploadfile {
+	width: 100%;
+	height: auto;
+	background-image: url(../img/dummy-uploadfile.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.componentPartnerlogo:empty,
+.componentProductimage:empty,
+.componentUploadfile:empty {
+	height: 100%;
+}
+.componentUploadfile img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.verticalaligntop .componentProductimage,
+.alignleft.verticalaligntop .componentProductimage,
+.verticalaligntop .componentPartnerlogo,
+.alignleft.verticalaligntop .componentPartnerlogo,
+.verticalaligntop .componentUploadfile,
+.alignleft.verticalaligntop .componentUploadfile {
+	background-position: left top;
+}
+.aligncenter.verticalaligntop .componentProductimage,
+.aligncenter.verticalaligntop .componentPartnerlogo,
+.aligncenter.verticalaligntop .componentUploadfile {
+	background-position: center top;
+}
+.alignright.verticalaligntop .componentProductimage,
+.alignright.verticalaligntop .componentPartnerlogo,
+.alignright.verticalaligntop .componentUploadfile {
+	background-position: right top;
+}
+
+.verticalalignmiddle .componentProductimage,
+.alignleft.verticalalignmiddle .componentProductimage,
+.verticalalignmiddle .componentPartnerlogo,
+.alignleft.verticalalignmiddle .componentPartnerlogo,
+.verticalalignmiddle .componentUploadfile,
+.alignleft.verticalalignmiddle .componentUploadfile {
+	background-position: left center;
+}
+.aligncenter.verticalalignmiddle .componentProductimage,
+.aligncenter.verticalalignmiddle .componentPartnerlogo,
+.aligncenter.verticalalignmiddle .componentUploadfile {
+	background-position: center center;
+}
+.alignright.verticalalignmiddle .componentProductimage,
+.alignright.verticalalignmiddle .componentPartnerlogo,
+.alignright.verticalalignmiddle .componentUploadfile {
+	background-position: right center;
+}
+
+.verticalalignbottom .componentProductimage,
+.alignleft.verticalalignbottom .componentProductimage,
+.verticalalignbottom .componentPartnerlogo,
+.alignleft.verticalalignbottom .componentPartnerlogo,
+.verticalalignbottom .componentUploadfile,
+.alignleft.verticalalignbottom .componentUploadfile {
+	background-position: left bottom;
+}
+.aligncenter.verticalalignbottom .componentProductimage,
+.aligncenter.verticalalignbottom .componentPartnerlogo,
+.aligncenter.verticalalignbottom .componentUploadfile {
+	background-position: center bottom;
+}
+.alignright.verticalalignbottom .componentProductimage,
+.alignright.verticalalignbottom .componentPartnerlogo,
+.alignright.verticalalignbottom .componentUploadfile {
+	background-position: right bottom;
+}
+
+.alignleft .componentProductimage img,
+.alignleft .componentPartnerlogo img,
+.alignleft .componentUploadfile img {
+    margin-left: 0;
+    margin-right: auto;
+}
+.aligncenter .componentProductimage img,
+.aligncenter .componentPartnerlogo img,
+.aligncenter .componentUploadfile img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright .componentProductimage img,
+.alignright .componentPartnerlogo img,
+.alignright .componentUploadfile img {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+
+
+
+
+.componentHeaderimage {
+	background-image: url(../../assets/header-dummy.png);
+}
+.componentFooterimage {
+	/*background-image: url(../img/emea-footer.jpg);*/
+} 
+.dummyPartnercontact {
+}
+.dummyPartnercontact span {
+	display: block;
+}
+.contactalignleft .dummyPartnercontact span {
+	margin-bottom: 10px;
+}
+.contactaligncenter .dummyPartnercontact span {
+}
+.contactalignright .dummyPartnercontact span {
+	margin-bottom: 10px;
+}
+.dummyPartnercontact  span span {
+	margin-right: 10px;
+	display: inline;
+}
+.contactalignleft .dummyPartnercontact span span {
+	display: block;
+	margin-bottom: 0px;
+}
+.contactaligncenter .dummyPartnercontact span span {
+}
+.contactalignright .dummyPartnercontact span span {
+	display: block;
+	margin-bottom: 0px;
+}
+.contactaligncenter .contactDelimiter:after {
+	content: "-";
+}
+
+.partnerContactCombination {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	/**line-height: 145%;**/
+}
+.partnerContactCombination .componentPartnerlogo {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 30%;
+}
+.partnerContactCombination .dummyPartnercontact {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 65%;
+}
+
+.templatePublish {
+	font-weight: bold;
+	background: #3af23a; /* Old browsers */
+	background: -moz-linear-gradient(top, #fefefe 0%, #3af23a 67%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #fefefe 0%,#3af23a 67%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #fefefe 0%,#3af23a 67%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#3af23a',GradientType=0 ); /* IE6-9 */
+}
+
+.formButtonInform,
+.formButtonBannerAdd,
+.formButtonBannerEdit {
+	font-weight: bold;
+	background: #3af23a; /* Old browsers */
+	background: -moz-linear-gradient(top, #fefefe 0%, #3af23a 67%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #fefefe 0%,#3af23a 67%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #fefefe 0%,#3af23a 67%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#3af23a',GradientType=0 ); /* IE6-9 */
+}
+.buttonDeactivate {
+	opacity: 0.4;
+	cursor: default;
+}
+.formBannerFile {
+	padding-top: 3px;
+}
+
+
+
+.dashboardOuter {
+	padding: 0px 0 0 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.dashboardOuter li {
+	list-style-type: none;
+}
+.dashboardItemOuter {
+	margin: 0px 10px 10px 0;
+	border: 1px solid #999999;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	overflow: hidden;
+}
+.dashboardItemHeadline {
+	background-color: #cccccc;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 120%;
+	border-bottom: 1px solid #999999;
+	position: relative;
+	cursor: move;
+}
+.dashboardItemContent {
+	overflow: auto;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+}
+.dialogOuter .dashboardItemContent {
+	position: relative;
+}
+.dashboardItemContent > div {
+	position: relative;
+}
+
+/*#dashboardPager {
+	width: 100%;
+	height:27px;
+	border-top:1px solid #999999;
+	position: absolute; 
+	bottom: 0;
+	box-sizing: border-box;
+	padding: 5px 2px;
+	z-index: 100;
+}
+#dashboardPager .gridButton {
+    border: 1px solid transparent;
+}
+
+#dashboardPager .gridButton:hover {
+    background-image: url(../../../admin/img/ui-icons_222222_256x240.png);
+    border: 1px solid #999999;
+	background-color: #e6e6e6;
+}*/
+
+.dashboardWidgetIcon {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    display: block;
+    border: 1px solid transparent;
+    float: right;
+    margin-right: 5px;
+	font-weight: normal;
+}
+.dashboardWidgetIcon:hover {
+	color: #666666;
+}
+
+
+
+/*.dashboardWidgetClose {
+    cursor: pointer;
+    background-image: url(../../../admin/img/ui-icons_222222_256x240.png);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    border: 1px solid #999999;
+    float: left;
+    margin-right: 5px;
+}
+.dashboardItemHeadline .dashboardWidgetClose {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    height: 12px;
+    width: 12px;
+    padding: 0 0px 4px 5px;
+    margin-right: 0;
+}
+
+.dashboardItemHeadline .dashboardWidgetClose:hover {
+    background-image: url(../../../admin/img/ui-icons_222222_256x240.png);
+    border: 1px solid #999999;
+	background-color: #e6e6e6;
+}
+*/
+.dashboardTable {
+	width: 100%;
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+}
+.dashboardListitemRow:hover td {
+	background-color: #fafafa;
+}
+.dashboardTable td {
+	margin: 0;
+	padding: 8px 8px;
+	border-bottom: 1px solid #999999;
+	vertical-align: top;
+}
+.dashboardListitemDate {
+	width: 90px;
+}
+.notdonelate {
+	/*background-image: url(../../../admin/img/icons/exclamation.png);*/
+	background-repeat: no-repeat;
+	background-position: right 7px;
+}
+.dashboardListitemHeadline {
+	padding: 8px 8px;
+	border-bottom: 1px solid #999999;
+	text-align: left;
+	background-color: #eeeeee;
+}
+
+.formLeftFull {
+	width: 100%;
+}
+
+.formLeftFull .fieldsetActive {
+    right: auto;
+    width: 550px;
+}
+.formRightFull .fieldsetActive {
+    right: auto;
+    width: 550px;
+}
+.formLeftFull .fieldsetSelectassign.fieldsetActive {
+	width: 900px;
+}
+.buttonHide {
+	opacity: 0.5;
+	cursor: default;
+}
+.formComponentsConfiguration {
+	padding-top: 10px;
+	padding-right: 20px;
+}
+
+.formRightFull .childmodulOpen {
+	left: -50px !important;
+}
+/*.fieldsetGrid.fieldsetFullHeight {
+	bottom: 0px !important;
+}*/
+
+.formRightFull {
+	left: 0;
+    margin: 0;
+}
+.formFullHide {
+    display: none;
+}
+.formFullShow {
+    display: block;
+}
+
+.dashboardListitemButton {
+	font-size: 200%;
+	text-align: right;
+}
+.listTransReqCount {
+	height: 23px;
+	overflow: hidden;
+}
+.listTransReqCountFull {
+	height: auto;
+}
+.notdonelate {
+	color: #cc0000;
+}
+.done {
+	color: #090;
+} 
+.open {
+	color: #F90;
+}
+
+.dashboardListitemCountriesButton {
+	margin-top: 10px;
+}
+.dashboardItemFunctions {
+	padding: 10px;
+    text-align: right;
+    font-size: 150%;
+    border-top: 1px dashed #aaa; 
+    margin-top: 0px;
+	position: absolute;
+    bottom: 1px;
+    left: 1px;
+    background-color: #ffffff;
+    right: 1px;
+}
+
+.formNavButtonPrev,
+.formNavButtonNext,
+.formNavButtonMax {
+	display: none;
+}
+.putItOutOfScreen {
+	position: absolute;
+	left: -10000px;
+}
+.compboxTranslation {
+	-webkit-box-shadow: 0px 0px 13px 0px rgba(255,0,0,0.66);
+	-moz-box-shadow: 0px 0px 13px 0px rgba(255,0,0,0.66);
+	box-shadow: 0px 0px 13px 0px rgba(255,0,0,0.66);
+}
+
+.componentsConfigurationIcon {
+	font-size: 125%;
+    margin-left: 8px;
+    padding: 5px;
+    display: block;
+    background-color: #dddddd;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #999999;
+    float: left;
+	opacity: 0.5;
+}
+.componentsConfigurationIconActive {
+	cursor: pointer;
+	opacity: 1;
+}
+
+

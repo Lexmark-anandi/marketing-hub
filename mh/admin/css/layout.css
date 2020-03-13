@@ -1,0 +1,336 @@
+@charset "utf-8";
+
+html { 
+	height: 100%;
+	overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6, p, ul, li, div, input, select, textarea, button, a {
+	box-sizing: border-box;
+	outline: 0;
+}
+a {
+	color: #333333;
+}
+
+body { 
+	background: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 75%;
+	color: #333333;
+	height: 100%;
+	overflow: hidden;
+}
+#overlay {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 100;
+	display: none;
+}
+.overlayVisible {
+	display: block !important;
+}
+#dialog {
+}
+.dialogZindex {
+	z-index: 10000 !important;
+}
+
+#page {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+#header {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 25px;
+	overflow: hidden;
+    background-color: rgba(163,141,125,1);
+}
+#apptitle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	color: #ffffff;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: 10px 7px;
+	background-image: url(../img/logo-titlebar.png);
+    padding: 6px 0px 3px 35px;
+}
+#menuebutton {
+	display: none;
+	position: absolute;
+    top: 3px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    background-image: url(../img/menue.png);
+    background-position: 5px 9px;
+    background-repeat: no-repeat;
+    background-size: 18px 9px;
+}
+
+#content {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	overflow: hidden;
+}
+
+#modulOuter,
+#formOuter {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+.modul {
+	position: relative;
+	float: left;
+}
+.childmodul {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	transition: left 0.3s ease-out, top 0.3s ease-out, padding-left 0.3s ease-out; 
+}
+.childmodulOpen {
+	padding-left: 50px;
+}
+.childmodulOpenBG {
+	background-color: rgba(255,255,255,1);
+}
+.childmodulOpenZ {
+	z-index: 100;
+}
+.childmodulUnvisible {
+	opacity: 0;
+	transition: opacity 0.1s ease-out; 
+}
+.grid {
+	width: 100%;
+	height: 100%;
+}
+.form {
+	position: absolute; 
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+.childmodul .form {
+	left: 50px;
+}
+.formMaximized {
+	position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto !important;
+    height: auto !important;
+    float: none !important;
+    z-index: 100;
+}
+
+.hidden {
+	display: none;
+}
+
+
+#t_gridTable {
+	height: 25px;
+	padding-top: 2px;
+    box-sizing: border-box;
+}
+
+.tabModulFilter, 
+.tabFormFilter,
+.folderModulFilter {
+	background-color: #d9d9d9;
+	padding: 4px 5px 0 5px;
+	position: relative;
+	overflow: hidden;
+	height: 25px;
+	box-sizing: border-box;
+	font-size: 95%;
+}
+.tabModulFilterInner {
+	float: left;
+}
+.tabModulFilterButtonsRight {
+	float: right;
+}
+.tabModulFilterButtonsRight .modulIcon {
+    margin-left: 5px;
+    margin-right: 0px
+}
+.gridMenueFunctions {
+	display: none;
+}
+.tabModulFilterInnerMobile {
+	float: left;
+	display: none;
+}
+.wModulFilterOuterMobile {
+	float: left;
+	margin: 4px 20px 0 0;
+}
+
+.bodyChild .tabModulFilter{ 
+	display: none;
+	padding: 0;
+	border-width: 0;
+}
+
+.gridCellFold {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 20px;
+	margin-right: 20px;
+}
+.gridCellExpand {
+	margin-right: 20px;
+}
+.gridCellFoldAutoHeight {
+    height: auto !important;
+	margin-right: 0px !important;
+}
+.gridExpand {
+	position: absolute;
+    right: 0;
+    top: 4px;
+}
+.rowsortable {
+    /*padding-left: 20px !important;*/
+}
+.rowsortableDeactive {
+    /*background-image: url(../img/row-sortable-888888.png);*/
+	color: #999999;
+}
+
+#sessionWarning {
+    padding: 20px;
+    display: none;
+}
+.overall {
+	z-index: 100000 !important;
+}
+
+.gridPager {
+	background-color: #d9d9d9;
+	border-top: 1px solid #999999;
+	height: 28px;
+	position: relative;
+	overflow: hidden;
+	font-size: 90%;
+}
+.gridPagerFix {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.gridPagerInner {
+	padding: 5px 5px 0 5px;
+}
+.gridPagerLeft {
+	width: 30%;
+	text-align: left;
+	float: left;
+	padding-top: 8px;
+}
+.gridPagerRight {
+	width: 30%;
+	text-align: right;
+	float: right;
+	padding-top: 8px;
+}
+.gridPagerCenter {
+	width: 40%;
+	text-align: center;
+	margin: 0 auto;
+}
+.pagerActPage {
+	width: 35px;
+    text-align: right;
+    font-size: 100%;
+    padding: 0 1px;
+}
+.pagerSelectRows {
+	width: 45px;
+    text-align: right;
+    font-size: 100%;
+    padding: 0 1px;
+}
+.pagerSelectRows option {
+    text-align: right;
+}
+.modulIconDisabled {
+	cursor: default !important;
+	color: #999;
+}
+
+.mediaPreviewOuter {
+	padding: 20px 0 0 20px;
+	position: relative;
+	height: 100%;
+	box-sizing: border-box;
+}
+.tabMediaPreview {
+	background-color: #eeeeee;
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+	margin: 0 0 20px 0;
+}
+.tabMediaPreview td {
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	padding: 5px 10px;
+}
+.mediaPreviewImage {
+	position: absolute;
+    top: 110px;
+    right: 10px;
+    bottom: 20px;
+    left: 20px;
+}
+.mediaPreviewImage img {
+	max-height: 100%;
+	max-width: 100%;
+}
+.buttonMediaDownload {
+	padding-left: 50px !important;
+	padding-right: 50px !important;
+	cursor: pointer;
+	font-weight: bold;
+}
+.buttonMediaDownload:hover {
+	background-color: #cccccc;
+}
+.mediaPreviewFilesys {
+	font-size: 90%;
+	margin-top: 5px;
+}
+
+.modulFillBG {
+	background-color: #ffffff;
+}

@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+.rowError, 
+.rowErrorFile, 
+.fileerrorMessage {
+    color: #cc0000;
+}
+.rowError .textfield, 
+.rowError select, 
+.rowError input {
+    border-color: #cc0000;
+}
+.errorDiv {
+    font-size: 95%;
+}
+.errorIcon {
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+.formTabIconError {
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+	color: #cc0000;
+}
+.messageError .errorIcon, 
+.errorIconTab .formTabIconError {
+    /*background-image: url(../img/ui-icons_cc0000_256x240.png);
+    background-position: 0 -144px;*/
+}
+.messageOk .errorIcon {
+    /*background-image: url(../img/ui-icons_378621_256x240.png);
+    background-position: -62px -145px;*/
+}
+
+.errorMess, 
+.errorMessMedia {
+    font-weight: bold;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+}
+
+.errormessage {
+	color: #cc0000;
+	margin-bottom: 10px;
+	font-weight: bold;
+	display: none;
+}
+.messageError {
+    color: #b81900;
+    visibility: visible !important;
+}
+.messageOk {
+    color: #378621;
+    visibility: visible !important;
+}

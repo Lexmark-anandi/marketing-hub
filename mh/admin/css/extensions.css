@@ -1,0 +1,383 @@
+
+/* #### Dialog #### */
+.ui-dialog-titlebar {
+}
+.dialogContent {
+}
+.dialogPadding {
+	padding: 10px;
+}
+.dialogPadding p {
+	margin: 0 0 1em 0;
+}
+.ui-widget {
+    font-size: 1em;
+}
+.ui-widget-overlay { 
+	background: #000000 url(../img/ui-bg_flat_0_000000_40x100.png) 50% 50% repeat-x; 
+	opacity: .4;
+	filter:Alpha(Opacity=40); 
+} 
+.bodyTrans .ui-widget-overlay {  
+	display: none; 
+}
+.bodyTransParent .ui-widget-content { 
+	background: transparent !important; 
+	border-width: 0px !important;
+}
+
+.ui-dialog {
+    padding: 0;
+	z-index: 1000 !important;
+}
+.ui-dialog .ui-dialog-content {
+    padding: 0;
+}
+.ui-widget-header {
+    border-width: 0;
+    border-bottom: 1px solid #999999;
+    color: #333333;
+    font-weight: bold;
+	font-size: 1em;
+}
+.ui-dialog .ui-dialog-titlebar {
+	height: 25px;
+	padding: 4px 0 0px 10px;
+}
+.bodyTransParent .ui-dialog-titlebar { 
+	display: none; 
+}
+.ui-dialog .ui-dialog-title {
+    margin: 0;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    padding: 0px;
+    top: 50%;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: 10px 0 10px 20px;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 2px 0px;
+	width: 100%;
+	font-weight: normal;
+}
+.ui-button .ui-button-text {
+    line-height: 1em;
+}
+.ui-dialog-buttonset .ui-state-default, 
+.ui-dialog-buttonset .ui-widget-content .ui-state-default, 
+.ui-dialog-buttonset .ui-widget-header .ui-state-default,
+.ui-dialog-buttonset .ui-button {
+	border: 1px solid #999999;
+	padding: 2px 10px;
+	margin-left: 20px;
+	width: 150px;
+	background-image: none !important;
+	background-repeat: repeat-x;
+	background-position: left top;
+	color: #000000;
+}
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+.ui-datepicker-header {
+	/*background: #d46e2d !important;*/
+}
+
+
+
+
+
+
+
+/* #### jqGrid #### */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: #d9d9d9;
+    font-weight: bold;
+}
+.ui-th-column, .ui-jqgrid .ui-jqgrid-htable th.ui-th-column {
+    text-align: left;
+	padding-left: 5px;
+}
+.ui-jqgrid .ui-icon-asc {
+    /*margin-left: 1px;*/
+}
+.ui-grid-icon-toolbar { 
+	margin-right: 10px;
+	padding-top: 4px;
+	padding-left: 4px;
+	float: left;
+	display: block;
+	cursor: pointer;
+}
+.ui-grid-icon {
+    float: left;
+    margin: 1px;
+	margin-top: -2px;
+}
+.ui-grid-icon-toolbar .ui-icon {
+    /*background-image: url("../img/ui-icons_222222_256x240.png") !important;*/
+	background-image: none !important;
+	padding-top: 3px;
+    padding-left: 4px;
+    box-sizing: border-box;
+}
+
+.ui-jqgrid .ui-pg-input,
+.ui-jqgrid .ui-pg-selbox,
+tr.ui-search-toolbar input, 
+tr.ui-search-toolbar select {
+    background-color: #ffffff;
+    border: 1px solid #999999;
+}
+tr.ui-search-toolbar input, 
+tr.ui-search-toolbar select {
+	margin-top: 3px;
+}
+.altRow {
+	background-color: #f9f9f9;
+}
+.ui-jqgrid-btable .ui-widget-content {
+	background-image: none;
+}
+.ui-jqgrid tr.jqgrow td {
+    height: auto;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	vertical-align: top;
+}
+.ui-jqgrid tr.ui-row-ltr td {
+	border-bottom: 1px dotted #999999; 
+	border-right: 2px none #999999; 
+	padding-left: 7px;
+ 	padding-right: 8px;
+} 
+.ui-jqgrid .ui-pg-button:hover { 
+}
+.ui-jqgrid tr.jqgrow td {
+    white-space: normal;
+	position: relative;
+}
+.ui-jqgrid tr.jqgrow td p {
+    margin: 0;
+    padding: 0;
+}
+#t_tabList {
+	border-top-width: 0;
+	border-bottom: 1px solid #999999;
+	background-color: #d9d9d9;
+}
+
+.ui-jqgrid .loading {
+    background: #fbfbfb url('../img/loading.gif') no-repeat 5px 5px;
+	padding-left: 25px;
+/*	position:absolute;
+	top:45%;
+	left:45%;
+	width:auto;
+	z-index:101;
+	padding:6px;
+	margin:5px;
+	text-align:center;
+	font-weight:bold;
+	display:none;
+	border-width:2px !important;
+	font-size:11px
+*/
+}
+.ui-jqgrid .ui-state-default, 
+.ui-jqgrid .ui-widget-content .ui-state-default, 
+.ui-jqgrid .ui-widget-header .ui-state-default {
+    color: #222;
+    border-color: #999999;
+}
+.ui-jqgrid .ui-state-default a, 
+.ui-jqgrid .ui-state-default a:link, 
+.ui-jqgrid .ui-state-default a:visited {
+    color: #222;
+}
+.ui-jqgrid .ui-state-default .ui-icon {
+    background-image: url("../img/ui-icons_222222_256x240.png");
+}
+.ui-multiselect .ui-state-default, 
+.ui-multiselect .ui-widget-content .ui-state-default, 
+.ui-multiselect .ui-widget-header .ui-state-default {
+    color: #222;
+}
+.ui-dialog .ui-state-default .ui-icon {
+    background-image: url("../img/ui-icons_222222_256x240.png");
+}
+.ui-icon {
+    text-indent: 0;
+}
+.ui-jqgrid .ui-icon {
+    /*background-image: url("../img/ui-icons_222222_256x240.png");*/
+	background-image: none;
+}
+.ui-jqgrid .ui-state-highlight .ui-icon {
+    /*background-image: url("../img/ui-icons_222222_256x240.png");*/
+	background-image: none;
+}
+.ui-jqgrid.ui-state-highlight, 
+.ui-jqgrid.ui-widget-content .ui-state-highlight, 
+.ui-jqgrid.ui-widget-header .ui-state-highlight {
+	background-color: #ddd !important;
+	color: #222;
+}
+.selectedDataset {
+	background-color: #ddd !important;
+	color: #222;
+}
+.ui-jqgrid.ui-state-highlight, 
+.ui-jqgrid.ui-widget-content .ui-state-hover, 
+.ui-jqgrid.ui-widget-header .ui-state-hover {
+	background-color: #ddd !important;
+	color: #222;
+}
+.ui-jqgrid .ui-jqgrid-htable th {
+  height: auto;
+  padding: 3px 2px 3px 2px;
+}
+.ui-jqgrid .ui-jqgrid-sortable {
+  height: 15px !important;
+}
+.ui-search-clear {
+	display: none;
+}
+.ui-search-table select, .ui-search-table input {
+  padding: 2px 3px;
+  outline: 0;
+  width: 90% !important;
+}
+.ui-search-table select {
+  padding: 1px 3px;
+}
+.gridPagerHidden {
+	background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+.gridPagerHidden div {
+	display: none;
+}
+
+#t_gridTable {
+	border-top-width: 0;
+}
+.ui-jqgrid .ui-search-table .ui-search-input>input {
+	margin-bottom: 4px;
+}
+.ui-jqgrid.ui-widget-content {
+	border-left-width: 0;
+	border-right-width: 0;
+}
+.ui-jqgrid tr.jqgfirstrow td {
+	border-color: transparent;
+}
+
+/* Grid as Child */
+.childmodul .gridPager {
+	background: #f9f9f9;
+	height: 65px;
+}
+.childmodul .grid .ui-widget-content {
+	border-width: 0; 
+}
+.childmodul .ui-state-default {
+	background: #f9f9f9;
+}
+
+
+/* ####Multiselect ##### */
+.ui-multiselect {
+	border-color: #999999;
+	margin-top: 10px;
+}
+
+.ui-multiselect .ui-widget-header {
+}
+.ui-multiselect .ui-widget-header a {
+	color: #333333;
+}
+.ui-multiselect div.selected {
+    width: 50% !important;
+}
+.ui-multiselect div.available {
+    width: 50% !important;
+}
+.ui-multiselect ul.available li {
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+.ui-multiselect ul .ui-state-default, .ui-multiselect ul .ui-widget-content .ui-state-default, .ui-multiselect ul .ui-widget-header .ui-state-default {
+    background: #eeeeee;
+}
+
+.ui-multiselect .search {
+	display: none;
+}
+
+
+
+/* Loadmask */
+.loadmask {
+    -moz-opacity: 50;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    background-color: #cccccc;
+	z-index: 10000;
+}
+.loadmask-msg {
+	border: 2px solid #999;;
+	background-color: #ffffff;
+	
+/*    z-index: 20001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border:1px solid #666;
+    background: #cccccc;
+    padding:2px;
+*/
+}
+
+.loadmask-msg div {
+	border-width: 0;
+	color: #333;
+    background: #fbfbfb url('../img/loading.gif') no-repeat 5px 5px;
+    font: normal 100% Arial, Helvetica, Verdana, sans-serif;
+/*    padding:5px 10px 5px 25px;
+    background: #fbfbfb url('images/loading.gif') no-repeat 5px 5px;
+    line-height: 16px;
+	border:1px solid #666;
+    color:#222;
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    cursor:wait;
+*/
+}
+
+
+.modulIconGridRow .fa {
+	font-size: 120%;
+}
+.modulIconBox .fa-pencil {
+	margin: 3px 0 0 3px !important;
+}
+.modulIconBox .fa-navicon {
+	margin: 3px 0 0 3px !important;
+}
+.modulIconBox .fa-chevron-down {
+	margin: 3px 0 0 3px !important;
+}
+.modulIconBox .fa-chevron-up {
+	margin: 3px 0 0 3px !important;
+}
+.modulFilter .modulIconBox .fa-chevron-down {
+	margin: 3px 0 0 3px !important;
+}
+.modulFilter .modulIconBox .fa-chevron-up {
+	margin: 3px 0 0 3px !important;
+}
+
+

@@ -1,0 +1,4 @@
+AuthName "Marketing Hub Sales"
+AuthType Basic
+AuthUserFile /var/www/html/mh/sales/.htpasswd
+require valid-user

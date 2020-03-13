@@ -1,0 +1,153 @@
+@charset "utf-8";
+@import url(reset.css);
+
+
+@import url(jquery-ui.min.css);
+@import url(jquery.loadmask.css); 
+@import url(dropzone.css);
+/*@import url(font-awesome/font-awesome.min.css);
+
+@import url(ui.jqgrid-4.6.0.css);
+@import url(searchFilter-4.6.0.css);
+@import url(ui.multiselect-4.6.0.css);
+@import url(jquery-ui-timepicker-addon-1.5.3.css);
+@import url(jquery.contextMenu.min.css);
+@import url(spectrum.css);
+@import url(jquery.gridster.css); 
+*/
+
+@import url(jquery.200gradware.css);
+@import url(extensions.css);
+
+@import url(navigation.css);
+/*@import url(form.css);
+@import url(formerror.css);*/
+@import url(layout.css);
+/*@import url(../../custom/admin/css/css-wall.css);*/ 
+
+/*@import url(responsive.css);*/
+
+
+
+@font-face{
+	font-family: Hero;
+	src: url("/externaltools/TPHero/TPHero-Regular.otf") format("opentype");
+}
+@font-face{
+	font-family: HeroItalic;
+	src: url("/externaltools/TPHero/TPHero-RegularItalic.otf") format("opentype");
+	font-style: italic;
+}
+@font-face{
+	font-family: HeroSemiBold;
+	src: url("/externaltools/TPHero/TPHero-SemiBold.otf") format("opentype");
+	font-weight: 700;
+}
+@font-face{
+	font-family: HeroSemiBoldItalic;
+	src: url("/externaltools/TPHero/TPHero-SemiBoldItalic.otf") format("opentype");
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: Lexicons;
+	src: url("/externaltools/fonts/lexicons/lexmark_iss_icon_font.eot");
+	src: url("/externaltools/fonts/lexicons/lexmark_iss_icon_font.eot#iefix") format('embedded-opentype'), url("/externaltools/fonts/lexicons/lexmark_iss_icon_font.ttf") format('truetype'), url("/externaltools/fonts/lexicons/lexmark_iss_icon_font.woff") format('woff'), url("/externaltools/fonts/lexicons/lexmark_iss_icon_font.svg") format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: lxk-ui;
+	src: url("/externaltools/fonts/lexicons/lxk-ui.eot");
+	src: url("/externaltools/fonts/lexicons/lxk-ui.eot#iefix") format('embedded-opentype'), url("/externaltools/fonts/lexicons/lxk-ui.ttf") format('truetype'), url("/externaltools/fonts/lexicons/lxk-ui.woff") format('woff'), url("/externaltools/fonts/lexicons/lxk-ui.svg") format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+
+
+/*
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-light-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-light-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-light-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-light-webfont.woff?1512488413) format('woff');
+	font-weight: 100;
+	font-style: normal
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-lightitalic-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-lightitalic-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-lightitalic-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-lightitalic-webfont.woff?1512488413) format('woff');
+	font-weight: 100;
+	font-style: italic
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-regular-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-regular-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-regular-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-regular-webfont.woff?1512488413) format('woff');
+	font-weight: 300;
+	font-style: normal
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-regularitalic-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-regularitalic-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-regularitalic-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-regularitalic-webfont.woff?1512488413) format('woff');
+	font-weight: 300;
+	font-style: italic
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-medium-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-medium-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-medium-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-medium-webfont.woff?1512488413) format('woff');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-mediumitalic-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-mediumitalic-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-mediumitalic-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-mediumitalic-webfont.woff?1512488413) format('woff');
+	font-weight: 400;
+	font-style: italic
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-semibold-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-semibold-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-semibold-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-semibold-webfont.woff?1512488413) format('woff');
+	font-weight: 600;
+	font-style: normal
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-semibolditalic-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-semibolditalic-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-semibolditalic-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-semibolditalic-webfont.woff?1512488413) format('woff');
+	font-weight: 600;
+	font-style: italic
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-bold-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-bold-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-bold-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-bold-webfont.woff?1512488413) format('woff');
+	font-weight: 700;
+	font-style: normal
+}
+@font-face {
+	font-family: tpHero;
+	src: url(../fonts/tp-hero/tphero-bolditalic-webfont.eot?1512488413);
+	src: url(../fonts/tp-hero/tphero-bolditalic-webfont.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/tp-hero/tphero-bolditalic-webfont.ttf?1512488413) format('truetype'), url(../fonts/tp-hero/tphero-bolditalic-webfont.woff?1512488413) format('woff');
+	font-weight: 700;
+	font-style: italic
+}
+@font-face {
+	font-family: Lexicons;
+	src: url(../fonts/glyphs/lexmark_iss_icon_font.eot?1512488413);
+	src: url(../fonts/glyphs/lexmark_iss_icon_font.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/glyphs/lexmark_iss_icon_font.ttf?1512488413) format('truetype'), url(../fonts/glyphs/lexmark_iss_icon_font.woff?1512488413) format('woff'), url(../fonts/glyphs/lexmark_iss_icon_font.svg?1512488413) format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: lxk-ui;
+	src: url(../fonts/glyphs/lxk-ui.eot?1512488413);
+	src: url(../fonts/glyphs/lxk-ui.eot?&1512488413#iefix) format('embedded-opentype'), url(../fonts/glyphs/lxk-ui.ttf?1512488413) format('truetype'), url(../fonts/glyphs/lxk-ui.woff?1512488413) format('woff'), url(../fonts/glyphs/lxk-ui.svg?1512488413) format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+*/
