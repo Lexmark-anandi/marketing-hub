@@ -1,2 +1,2 @@
 # marketing-hub
-A repository to maintain mmarketing hub related code base
+A repository to maintain marketing hub related code base
