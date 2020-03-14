@@ -1,0 +1,217 @@
+<!-- ========== Defined **** Types ============================================= -->
+
+<!ENTITY % CountryIso        "CDATA">
+<!ENTITY % LanguageIso       "CDATA">
+<!ENTITY % Revenue_pid       "CDATA">
+<!ENTITY % pn_text           "CDATA">
+<!ENTITY % mkt_name          "CDATA">
+<!ENTITY % segmentation_id   "CDATA">
+<!ENTITY % type_id           "CDATA">
+<!ENTITY % func              "CDATA">
+<!ENTITY % cat               "CDATA">
+<!ENTITY % unit              "CDATA">
+<!ENTITY % tech_type         "CDATA">
+<!ENTITY % mkt_id            "CDATA">
+<!ENTITY % prod_type         "CDATA">
+<!ENTITY % prod_state        "CDATA">
+<!ENTITY % prod_status       "CDATA">
+<!ENTITY % in_the_box       "CDATA">
+
+<!ENTITY % rfield            "#PCDATA" >
+
+<!-- ========== Top Level Elements ======================================== -->
+
+
+<!ELEMENT catalogue (product)+ >
+<!ATTLIST catalogue      id                  ID              #IMPLIED>
+<!ATTLIST catalogue      country           %CountryIso;      #REQUIRED>
+<!ATTLIST catalogue      language          %LanguageIso;     #REQUIRED>
+
+<!ELEMENT product (out_of_catalogue?, general?, pn?, techspecs?, mkt_general?, mkt_features?, mkt_brochures?, mkt_statements?, mkt_faqs?, mkt_pillar?, mkt_descriptions?, mkt_in_the_box?, mkt_families?, relationships?, prices?, Images?, fo_url?)>
+<!ATTLIST product        revenue_pid       %Revenue_pid;     #REQUIRED>
+
+<!ELEMENT out_of_catalogue (%rfield;) >
+
+<!-- ========== Tab General         ======================================== -->
+
+<!ELEMENT general (world_revenue_pid, jde_mkt_name, ef_shortname, prod_description?, model_number, ctry_of_origin, prod_type, technology_family, base_model?)>
+<!ELEMENT world_revenue_pid (%rfield;) >
+<!ELEMENT jde_mkt_name (%rfield;) >
+<!ELEMENT ef_shortname (%rfield;) >
+<!ELEMENT prod_description (%rfield;) >
+<!ELEMENT model_number (%rfield;) >
+<!ELEMENT ctry_of_origin (%rfield;) >
+<!ELEMENT prod_type (%rfield;) >
+<!ATTLIST prod_type product_type_id  %mkt_id;     #REQUIRED>
+<!ELEMENT technology_family (%rfield;) >
+<!ATTLIST technology_family techno_family_id %mkt_id; #IMPLIED >
+<!ELEMENT base_model (%rfield;) >
+
+<!-- ========== Tab PN              ======================================== -->
+
+<!ELEMENT pn (upc?, palletPN80x120?, palletPN120x120?, palletUPC80x120?, palletUPC120x120?, over_pack_UPC?, intermediate_pack_UPC?, ReplacementProductName?, ReplacementPN?, pn_description?,pn_display?)>
+<!ATTLIST pn        pn_text       %pn_text;     #REQUIRED>
+<!ELEMENT upc (%rfield;) >
+<!ELEMENT palletPN80x120 (%rfield;) >
+<!ELEMENT palletPN120x120 (%rfield;) >
+<!ELEMENT palletUPC80x120 (%rfield;) >
+<!ELEMENT palletUPC120x120 (%rfield;) >
+<!ELEMENT over_pack_UPC (%rfield;) >
+<!ELEMENT intermediate_pack_UPC (%rfield;) >
+<!ELEMENT ReplacementProductName (%rfield;) >
+<!ELEMENT ReplacementPN (%rfield;) >
+<!ELEMENT pn_description (%rfield;) >
+<!ELEMENT pn_display (%rfield;) >
+
+<!-- ========== Tab Marketing General  ===================================== -->
+
+<!ELEMENT mkt_general (mkt_shortname?, mkt_paragraph?, tagline?, announce_date?, withdraw_date?, withdraw_spare_date?, withdraw_supplies_date?, status?, archive_flag?)>
+<!ATTLIST mkt_general  mkt_name    %mkt_name;     #IMPLIED>
+<!ELEMENT mkt_shortname          (%rfield;) >
+<!ELEMENT mkt_paragraph          (%rfield;) >
+<!ELEMENT tagline				 (%rfield;) >
+<!ELEMENT announce_date          (%rfield;) >
+<!ELEMENT withdraw_date          (%rfield;) >
+<!ELEMENT withdraw_spare_date    (%rfield;) >
+<!ELEMENT withdraw_supplies_date (%rfield;) >
+<!ELEMENT status                 (%rfield;) >
+<!ELEMENT archive_flag           (%rfield;) >
+
+<!-- ========== Tab Marketing Features ===================================== -->
+
+<!ELEMENT mkt_features (feature*)>
+<!ELEMENT feature (header, feature_text)>
+<!ATTLIST feature  feature_id    %mkt_id;     #REQUIRED>
+
+<!-- ========== Tab Marketing Brochures ===================================== -->
+
+<!ELEMENT mkt_brochures (brochure*)>
+<!ELEMENT brochure (b_header, brochure_text)>
+<!ATTLIST brochure  brochure_id    %mkt_id;     #REQUIRED>
+
+<!-- ========== Tab Marketing Statements  ================================== -->
+
+<!ELEMENT mkt_statements (statement*)>
+<!ELEMENT statement (segmentation, statement_text)>
+<!ATTLIST statement  statement_id    %mkt_id;       #REQUIRED>
+<!ELEMENT segmentation (%rfield;)>
+<!ATTLIST segmentation  id    %segmentation_id;     #REQUIRED>
+<!ELEMENT statement_text (%rfield;) >
+
+<!-- ========== Tab Marketing QA       ===================================== -->
+
+<!ELEMENT mkt_faqs (faq*)>
+<!ELEMENT faq (question, answer)>
+<!ATTLIST faq  faq_id    %mkt_id;     #REQUIRED>
+
+<!-- ========== Tab Marketing pillar  ===================================== -->
+
+<!ELEMENT mkt_pillar (bullet*)>
+
+<!-- ========== Tab Marketing Descriptions  ================================ -->
+
+<!ELEMENT mkt_descriptions (description*)>
+<!ELEMENT description (type, description_text)>
+<!ATTLIST description  description_id    %mkt_id;     #REQUIRED>
+<!ELEMENT type (%rfield;)>
+<!ATTLIST type  type_id    %type_id;     #REQUIRED>
+
+<!-- ========== Tab Marketing In the box ===================================== -->
+
+<!ELEMENT mkt_in_the_box (in_the_box*)>
+<!ELEMENT in_the_box 			(%rfield;)>
+<!ATTLIST in_the_box  id   		%mkt_id;     #REQUIRED>
+<!ATTLIST in_the_box  type   	%in_the_box;     #REQUIRED>
+<!ATTLIST in_the_box  type_id   %type_id;     #REQUIRED>
+
+
+<!-- ========== Tab Marketing Families ===================================== -->
+
+<!-- ========== Tab Marketing RelationShip  ================================ -->
+
+<!ELEMENT relationships (product_to*)>
+<!ELEMENT product_to (%rfield;) >
+<!ATTLIST product_to  pn                %mkt_id;      #REQUIRED>
+<!ATTLIST product_to  productTo_PID     %mkt_id;      #REQUIRED>
+<!ATTLIST product_to  productTo_type    %prod_type;   #REQUIRED>
+<!ATTLIST product_to  productTo_state   %prod_state;  #REQUIRED>
+<!ATTLIST product_to  productTo_status  %prod_status; #REQUIRED>
+
+<!-- ========== Tab Marketing TechSpecs  =================================== -->
+
+<!ELEMENT techspecs (attribute*)>
+<!ELEMENT attribute (value*)>
+<!--The following section is added by Samriddha and Ranjan -->
+<!ATTLIST value  value_id     %func;      #IMPLIED>
+<!--The end of addition.-->
+<!ATTLIST attribute  attribute_id     %func;      #IMPLIED>
+<!ATTLIST attribute  name             %func;      #IMPLIED>
+<!ATTLIST attribute  functionality_id    %func;      #IMPLIED>
+<!ATTLIST attribute  functionality    %func;      #IMPLIED>
+<!ATTLIST attribute  category_id         %cat;       #IMPLIED>
+<!ATTLIST attribute  category         %cat;       #IMPLIED>
+<!ATTLIST attribute  unit             %unit;      #IMPLIED>
+<!ATTLIST attribute  state            %func;      #IMPLIED>
+<!ATTLIST attribute  type             %tech_type; #REQUIRED>
+
+<!-- ========== Tab Marketing Families         ============================= -->
+
+<!ELEMENT mkt_families (family*)>
+<!ELEMENT family (family*)>
+<!ATTLIST family  family_name    %mkt_name;     #REQUIRED>
+
+<!-- ========== Tab CMS Images         ===================================== -->
+
+<!ELEMENT Images (product_image?, family_image?)>
+
+<!-- ========== Tab Prices             ===================================== -->
+
+<!ELEMENT prices (list?, street?, channel?, web?, street_price_with_tax?, web_price_with_tax?, best_dealer_price?, best_retailer_price?, best_wholesaler_price?, copy_fee?, env_fee?, currency?)>
+
+<!-- ========== Tab Front Office URL   ===================================== -->
+
+<!-- ======== <!ELEMENT fo_url (%rfield;) >============ -->
+
+<!-- Element for Marketing Features part -->
+<!ELEMENT header (%rfield;) >
+<!ELEMENT feature_text (%rfield;) >
+
+<!-- Element for Marketing Brochures part -->
+<!ELEMENT b_header (%rfield;) >
+<!ELEMENT brochure_text (%rfield;) >
+
+<!-- Element for Marketing faqs part -->
+<!ELEMENT question (%rfield;) >
+<!ELEMENT answer (%rfield;) >
+
+<!-- Element for Marketing Bullets part -->
+<!ELEMENT bullet (%rfield;) >
+<!ATTLIST bullet  bullet_id    %mkt_id;     #REQUIRED>
+<!ATTLIST bullet  type_id      %type_id; 	#IMPLIED>
+
+<!-- Element for Marketing Statements part -->
+<!ELEMENT description_text (%rfield;) >
+
+<!-- Element for Marketing Package part -->
+<!ELEMENT product_in (%rfield;) >
+
+<!-- Element for Image part -->
+<!ELEMENT product_image (%rfield;) >
+<!ELEMENT family_image (%rfield;) >
+
+<!-- Element for Prices part -->
+<!ELEMENT list (%rfield;) >
+<!ELEMENT street (%rfield;) >
+<!ELEMENT channel (%rfield;) >
+<!ELEMENT web (%rfield;) >
+<!ELEMENT street_price_with_tax (%rfield;) >
+<!ELEMENT web_price_with_tax (%rfield;) >
+<!ELEMENT best_dealer_price (%rfield;) >
+<!ELEMENT best_retailer_price (%rfield;) >
+<!ELEMENT best_wholesaler_price (%rfield;) >
+<!ELEMENT copy_fee (%rfield;) >
+<!ELEMENT env_fee (%rfield;) >
+<!ELEMENT currency (%rfield;) >
+
+<!-- Element for Value part -->
+<!ELEMENT value (%rfield;) >

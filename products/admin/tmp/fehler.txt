@@ -1,0 +1,16 @@
+ERROR 1064 (42000) at line 16029: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '"Microsoft Windows Server 2003 running Terminal Services with Citrix Presentatio' at line 1
+ERROR 1064 (42000) at line 14452: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 47297: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 "No such file or directory")
+ERROR 1064 (42000) at line 104715: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 3920: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VAL' at line 1
+ERROR 1064 (42000) at line 88039: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 85666: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 37983: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IN' at line 1
+ERROR 1064 (42000) at line 6586: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 103397: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '"' at line 1
+ERROR 1064 (42000) at line 44221: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 64854: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000) at line 49428: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT' at line 1
+ERROR 1064 (42000) at line 129691: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '"Lexmark and Lexmark with the diamond des' at line 1
+ERROR 1064 (42000) at line 7549: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1

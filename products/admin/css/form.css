@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+/* #### STANDARD FORM #### */
+.formRow {
+	clear: both;
+    margin: 0px 0 5px 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
+.formRowSpace {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.formLabel {
+	float: left;
+	width: 190px;
+	padding: 3px 0 0 0;
+}
+.formField {
+	margin-left: 200px;
+}
+
+.textfield {
+	width: 100%;
+	border: 1px solid #999;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+	padding: 1px 5px;
+	box-sizing: border-box;
+    color: #333333;
+}
+.textfieldUpload {
+	padding: 0px;
+	background-color: #fff;
+}
+.textfieldRead {
+	border-width: 0px;
+	background-color: transparent;
+	height: auto !important;
+}
+.textfieldRead p {
+	margin: 0 0 1em 0;
+}
+.textfieldRead + .cke {
+	display: none
+}
+.textfieldReadRadio,
+select.textfieldRead {
+	position: absolute;
+	left: -10000px;
+}
+textarea {
+	resize: none;
+}
+.h100 {
+	height: 100px;
+}
+.h500 {
+	height: 500px;
+}
+.hFull {
+	height: 100%;
+}
+.w50 {
+	width: 50px !important;
+}
+.tabGridFilter label,
+.tabFormFilter label {
+	display: none;
+}
+.tabGridFilter .textfield,
+.tabFormFilter .textfield {
+	width: 150px;
+}
+.wGridFilterOuter,
+.wFormFilterOuter {
+	width: 150px;
+	margin-right: 10px;
+	overflow: hidden;
+	display: inline-block;
+}
+.wGridFilterDisabled .textfield,
+.wFormFilterDisabled .textfield {
+	border-color: #d9d9d9 !important;
+	background-color: #d9d9d9 !important;
+	width: 200px;
+}
+
+.formButton {
+	cursor: pointer;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+	background-color: #cccccc;
+    border: 1px solid #999999;
+    color: #000000;
+    margin-left: 20px;
+    padding: 2px 0px;
+    width: 150px;
+}
+
+.rowError, 
+.rowErrorFile, 
+.fileerrorMessage {
+    color: #cc0000;
+}
+.rowError .textfield, 
+.rowError select, 
+.rowError input {
+    border-color: #cc0000;
+}
+.errorDiv {
+    font-size: 95%;
+}
+.errorIcon {
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+.formTabIconError {
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+}
+.messageError .errorIcon, 
+.errorIconTab .formTabIconError {
+    background-image: url(../img/ui-icons_cc0000_256x240.png);
+    background-position: 0 -144px;
+}
+.messageOk .errorIcon {
+    background-image: url(../img/ui-icons_378621_256x240.png);
+    background-position: -62px -145px;
+}
+
+.errorMess, 
+.errorMessMedia {
+    font-weight: bold;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+}
+
+.errormessage {
+	color: #cc0000;
+	margin-bottom: 10px;
+	font-weight: bold;
+	display: none;
+}
+.messageError {
+    color: #b81900;
+    visibility: visible !important;
+}
+.messageOk {
+    color: #378621;
+    visibility: visible !important;
+}
+
+
+.formContent {
+    border-top: 1px solid #aaa;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+.formLeft {
+    position: absolute;
+    top: 0px;
+	width: 550px;
+	bottom: 0px;
+    left: 0px;
+    background-color: #f0f0f0;
+}
+.formLeftInner {
+    height: 100%;
+    overflow-y: auto;
+}
+.formMiddle {
+    width: 20px;
+    position: absolute;
+    top: 0px;
+	bottom: 0px;
+    left: 550px;
+    background-color: #d9d9d9;
+    z-index: 100;
+    background-image: url(../img/assigned_open.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+.formRight {
+    position: absolute;
+    margin: 0 0 0 20px; 
+    padding: 0;
+    top: 0px;
+    right: 0px;
+    left: 550px;
+	bottom: 0px;
+    background-color: #ffffff;
+}
+.formRightInner {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.formTabs {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #999999;
+    z-index: 10;
+}
+.formLeft .formTabs {
+    background-color: #f0f0f0;
+}
+.formFooter {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #999999;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.formLeft .formFooter {
+    background-color: #f0f0f0;
+}
+.formTabs ul {
+    margin: 0;
+    padding: 10px 10px 0px 10px;
+	position: relative;
+	overflow: hidden;
+}
+.formTabs li {
+    float: left;
+    margin: 1px 1px 1px 1px;
+    padding: 5px 22px 5px 4px;
+    cursor: pointer;
+    border-top: solid 1px #999999;
+    border-left: solid 1px #999999;
+    border-right: solid 1px #999999;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 78%, #f9f9f9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(78%,#ffffff), color-stop(100%,#f9f9f9));
+    background: -webkit-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: -o-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: -ms-linear-gradient(top, #ffffff 78%,#f9f9f9 100%);
+    background: linear-gradient(to bottom, #ffffff 78%,#f9f9f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 );
+    list-style-type: none;
+}
+
+.formTabs .active {
+    background: #cccccc;
+    background: -moz-linear-gradient(top, #cccccc 78%, #f9f9f9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(78%,#cccccc), color-stop(100%,#f9f9f9));
+    background: -webkit-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: -o-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: -ms-linear-gradient(top, #cccccc 78%,#f9f9f9 100%);
+    background: linear-gradient(to bottom, #cccccc 78%,#f9f9f9 100%);
+}
+.formTabIconError {
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+}
+
+.fieldset {
+    position: absolute;
+    top: 0px;
+	right: 100%;
+    bottom: 0px;
+    left: 0px;
+    border-width: 0;
+    overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.fieldsetActive {
+    right: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+    overflow-y: auto;
+} 
+
+.formInlineblock {
+	display: inline-block;
+}
+
+
+
+
+
+
+
+.gridButton {
+	cursor: pointer;
+	background-image: url(../img/ui-icons_222222_256x240.png);
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block; 
+	border: 1px solid #999999;
+	margin-right: 5px;
+}
+.gridButtonAll {
+	float: right;
+}
+.gridButton:hover {
+	background-image: url(../img/ui-icons_2e83ff_256x240.png);
+	border: 1px solid #1c99ce;
+}
+.formNavButtonDisabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.gridButton.formNavButtonDisabled:hover {
+    background-image: url(../img/ui-icons_222222_256x240.png);
+    border: 1px solid #999999;
+}
+
+
+
+input[type="button" i]:disabled, input[type="submit" i]:disabled, input[type="reset" i]:disabled, input[type="file" i]:disabled::-webkit-file-upload-button, button:disabled, select:disabled, keygen:disabled, optgroup:disabled, option:disabled, select[disabled] > option {
+    color: #333333;
+}
+
+
+
+/* #### LOGIN FORM #### */
+#loginOuter {
+	width: 400px; 
+	margin: 100px 0 0 100px;
+}
+#loginLogo {
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 150px;
+	margin-bottom: 10px;
+}
+#loginToolname {  
+	font-size: 150%;
+	margin-bottom: 50px;
+	padding-left: 2px;
+	color: #f08008;
+}
+#loginOuter form {
+	margin: 0px 0px 0px 3px;
+}
+#loginOuter .formRow {
+    border-bottom-width: 0px !important;
+}
+#loginOuter .formLabel {
+	float: left;
+	width: 100px;
+}
+#loginOuter .formField {
+	margin-left: 110px;
+}
+#loginOuter .formButton {
+	margin-left: 0px;
+}
+#loginOuter .errormessage {
+	display: block;
+}
+#loginOuter .textfield {
+	width: 100%;
+}
+#loginOuter .formButton {
+	width: 100%;
+}
+
+.version {
+	font-size: 50%;
+	padding: 0 0 px 0px;
+	color: #333333;
+}
+
+
+
+
+
+
+
+
+
+

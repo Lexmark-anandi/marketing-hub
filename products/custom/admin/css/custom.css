@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* #### CUSTOMIZED CSS #### */
+#header {
+    background-color: rgba(163,141,125,1);
+}
+#apptitle {
+}
+#navigation ul li ul {
+    margin: 0px 0 0 0px;
+}
+#navigation .navActiveMain {
+    text-decoration: none;
+    color: #333333;
+    background-color: rgba(163,141,125,0.3);
+}
+#navigation .navHover {
+	color: #333333 !important;
+    background-color: rgba(163,141,125,0.1);
+}
+#navigation .navRight > li > .navHover {
+	color: #ffffff !important;
+}
+#navigation .navActive {
+    text-decoration: none;
+    background-color: rgba(163,141,125,0.3);
+}
+
+
+
+
+
+
+
+
+
+

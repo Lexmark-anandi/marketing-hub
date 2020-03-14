@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+@media screen and (max-width: 600px){
+	body { 
+		font-size: 90%;
+	}
+	#header {
+		height: 40px;
+	}
+	#apptitle {
+		top: 7px;
+		padding-right: 40px;
+		padding-top: 7px;
+		text-overflow: ellipsis;
+		font-size: 80%;
+	}
+
+
+	#menuebutton {
+		display: block;
+	}
+	#navigation {
+		position: fixed;
+		top: 0px;
+		right: 100%;
+		bottom: 0px;
+		left: -75%;
+		width: 75%;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		transition: left 0.3s ease-out;
+		z-index: 110;
+	}
+	#navigation.openMenue {
+		left: 0%;
+		transition: left 0.3s ease-out;
+	}
+	
+	#navigation ul li {
+		display: block;
+		float: none;
+		font-size: 120%;
+		border-bottom: 1px solid #999999;
+	}
+	#navigation ul li div {
+		padding: 10px 40px 10px 10px;
+	}
+	
+	#navigation ul li ul {
+		display: block !important;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 100%;
+		margin: 0px 0px 0px 0px;
+		border-top-width: 0px;
+		border-bottom-width: 0px;
+		padding-top: 0;
+		transition: left 0.3s ease-out;
+	}
+	#navigation ul li ul.openSubmenue {
+		left:  0%;
+		transition: left 0.3s ease-out;
+	}
+	#navigation li ul li div {
+		padding: 10px 10px 10px 10px;
+	}
+	
+	.navRight {
+		float: none;
+		margin-right: 0px !important;
+		padding-right: 0px !important;
+		background-position: 10px 10px;
+	}
+	.navRight li ul {
+		right: 0px !important;
+		width: 100% !important;
+	}
+	.navRight li {
+		font-weight: normal !important;
+	}
+	#navLogout {
+		padding: 10px 20px 10px 12px;
+	}
+	.menueCloseMain,
+	.menueClose {
+		display: block !important;
+	}
+	.iconSubmenue {
+		background-image: url("../img/submenue-222222.png");
+	}
+	#breadcrumb {
+		top: 40px;
+	}
+	#breadcrumbInner {
+		padding-top: 3px;
+	}
+	
+	#content {
+		top: 65px;
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 550px) {
+	#loginOuter {
+		width: 95%;
+		margin: 10px 0 0 10px;
+		box-sizing: border-box;
+	}
+	#loginOuter .formLabel {
+		float: none;
+		width: 100%;
+	}
+	#loginOuter .formField {
+		margin-left: 0px;
+	}
+
+	.textfield {
+		padding: 5px 5px;
+	}
+	.formButton {
+		padding: 5px 0px;
+	}
+
+
+}
+
+
+
