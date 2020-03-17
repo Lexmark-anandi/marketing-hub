@@ -1,4 +1,12 @@
 <?php
+$time_start = microtime(true);
+
+echo date_default_timezone_get();
+$currenttime = date('h:i:s:u');
+list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+echo " START => $hrs:$mins:$secs\n";
+
+
 include_once(__DIR__ . '/../config-all.php');
 include_once(__DIR__ . '/../custom/config-all-custom.php');
 
@@ -88,5 +96,13 @@ include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/products-set-announc
 	mkdir('../admin/tmp/cron/' . $subfolder, 0777);
 	chmod('../admin/tmp/cron/' . $subfolder, 0777);
 
+$time_end = microtime(true);
 
+echo date_default_timezone_get();
+$currenttime = date('h:i:s:u');
+list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+echo " END => $hrs:$mins:$secs\n";
+
+$execution_time = ($time_end - $time_start)/60;
+echo "Total Execution Time :: ".$execution_time." Mins.";
 ?>
