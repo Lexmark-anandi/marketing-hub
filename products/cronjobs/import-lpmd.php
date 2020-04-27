@@ -85,6 +85,7 @@ foreach($rows as $row){
 				
 				$filetime = $aFile[6].'-'.$CONFIG['system']['months2num'][$aFile[4]].'-'.$aFile[5].' '.$aFile[7].':'.$aFile[8].':00';
 				if($row['last_update'] < $filetime){
+          echo "PUBLIC :: ".$file."\n";
 					$arrayFiles[$file] = $filetime;
 				}
 			}
@@ -94,6 +95,7 @@ foreach($rows as $row){
 				
 				$filetime = $aFile[6].'-'.$CONFIG['system']['months2num'][$aFile[4]].'-'.$aFile[5].' '.$aFile[7].':'.$aFile[8].':00';
 				if($row['last_update_bsd'] < $filetime){
+          echo "BSD :: ".$file."\n";
 					$arrayFilesBSD[$file] = $filetime;
 				}
 			}
@@ -102,8 +104,13 @@ foreach($rows as $row){
 	closedir($directory);
 }
 
+
+echo "HERE\n";
 asort($arrayFiles);
 asort($arrayFilesBSD);
+echo "PUBLIC :: ".count($arrayFiles) . "\n";
+echo "BSD :: ".count($arrayFilesBSD) . "\n";
+echo "THERE \n";
 
 #################################################################################
 
@@ -138,7 +145,11 @@ $CONFIG['saveVersions'] = $aSaveVersionsX;
 #################################################################################
 // do import
 #################################################################################
+$count = 1;
 foreach($arrayFiles as $file => $time){
+  echo "++++++++++++++++++++++++++++++++++++++";
+  echo "RUNNING " . $count .  " " .$file. "\n";
+  $count++;
 	$insertAll = '';
 	
 	$aArgs = array();
@@ -153,13 +164,19 @@ foreach($arrayFiles as $file => $time){
 		$queryfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/query.txt';
 		$errorfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/fehler.txt';
 		$handle = fopen($queryfile, 'w');
-		fwrite($handle, $insertAll);
+    fwrite($handle, $insertAll);
+    echo 'mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile."\n";
 		system('mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile.'');
 	}
 }
+
+$count = 1;
 foreach($arrayFilesBSD as $file => $time){
 	$insertAll = '';
-	
+	echo "++++++++++++++++++++++++++++++++++++++\n";
+  echo 'RUNNING BSD ' . $count .  " " .$file. "\n";
+  $count++;
+
 	$aArgs = array();
 	$aArgs['file'] = $file;  
 	$aArgs['time'] = $time;
@@ -172,7 +189,8 @@ foreach($arrayFilesBSD as $file => $time){
 		$queryfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/query.txt';
 		$errorfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/fehler.txt';
 		$handle = fopen($queryfile, 'w');
-		fwrite($handle, $insertAll);
+    fwrite($handle, $insertAll);
+    echo 'mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile."\n";
 		system('mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile.'');
 	}
 }
@@ -189,7 +207,8 @@ if($insertAll != ''){
 	$queryfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/query.txt';
 	$errorfile = $CONFIG['system']['pathInclude'] . 'admin/tmp/fehler.txt';
 	$handle = fopen($queryfile, 'w');
-	fwrite($handle, $insertAll);
+  fwrite($handle, $insertAll);
+  echo 'mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile . "\n";
 	system('mysql -h '.$CONFIG['db'][0]['host'].' -u '.$CONFIG['db'][0]['user'].' -p'.$CONFIG['db'][0]['password'].' '.$CONFIG['db'][0]['database'].' < '.$queryfile.' 2>> '.$errorfile.'');
 }
 ############################

@@ -1,12 +1,12 @@
 <?php
-
+echo "Product DB BACKUP Started\n";
 $date = new DateTime();
 $jetzt = $date->format('Y-m-d-H-i-s-');
 
-$file = $jetzt . 'plg.sql';
+$file = $jetzt . 'products.sql';
 
 
-system('mysqldump -u ' . $CONFIG['db'][0]['user'] . ' -p' . $CONFIG['db'][0]['password'] . ' ' . $CONFIG['db'][0]['database'] . ' > ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
+system('mysqldump -h ' . $CONFIG['db'][0]['host'] . ' -u ' . $CONFIG['db'][0]['user'] . ' -p' . $CONFIG['db'][0]['password'] . ' ' . $CONFIG['db'][0]['database'] . ' > ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
 
 system('gzip ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
 //system('rm ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
@@ -20,5 +20,5 @@ for($i = 0; $i < (count($aFiles) - 5); $i++) {
 		unlink($CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
 	} 
 };
-
+echo "Product DB BACKUP Ended\n";
 ?>

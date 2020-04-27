@@ -30,7 +30,22 @@ ini_set("display_errors", "off");
 ini_set("memory_limit", "512M");
 ini_set("max_execution_time", "12000");
 
-getConnection(0); 
+getConnection(0);
+
+$query_select_mh = $CONFIG['dbconn'][0]->prepare('SELECT status FROM ' . $CONFIG['db'][0]['prefix'] .'_cron_status');
+$query_select_mh->execute();
+$rowmh = $query_select_mh->fetch(PDO::FETCH_ASSOC);
+
+$query_select_product = $CONFIG['dbconn'][0]->prepare('SELECT status FROM products.200_cron_status');
+$query_select_product->execute();
+$rowproduct = $query_select_product->fetch(PDO::FETCH_ASSOC);
+
+if(($rowmh['status'] == 0) && ($rowproduct['status'] == 0))
+{
+	
+$query_update = $CONFIG['dbconn'][0]->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 1');
+$query_update->execute();
+
 
 // Set Config Mailings
 $queryM = $CONFIG['dbconn'][0]->prepare('
@@ -96,6 +111,9 @@ include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/products-set-announc
 	mkdir('../admin/tmp/cron/' . $subfolder, 0777);
 	chmod('../admin/tmp/cron/' . $subfolder, 0777);
 
+$query_update = $CONFIG['dbconn'][0]->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 0');
+$query_update->execute();	
+
 $time_end = microtime(true);
 
 echo date_default_timezone_get();
@@ -105,4 +123,5 @@ echo " END => $hrs:$mins:$secs\n";
 
 $execution_time = ($time_end - $time_start)/60;
 echo "Total Execution Time :: ".$execution_time." Mins.";
+}
 ?>
