@@ -12,7 +12,7 @@ system('gzip ' . $CONFIG['system']['directoryRoot'] . 'backup/db/' . $file);
 //system('rm ' . $CONFIG['system']['directoryRoot'] . 'backup/db/' . $file);
 
 
-$aFiles = scandir($CONFIG['system']['directoryRoot'] . 'backup/db/');
+$aFiles = array_diff(scandir($CONFIG['system']['pathInclude'] . 'backup/db/'), array('..', '.','.gitignore'));
 sort($aFiles);
 for($i = 0; $i < (count($aFiles) - 5); $i++) {
 	$file = $aFiles[$i];

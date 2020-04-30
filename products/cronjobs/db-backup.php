@@ -11,8 +11,7 @@ system('mysqldump -h ' . $CONFIG['db'][0]['host'] . ' -u ' . $CONFIG['db'][0]['u
 system('gzip ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
 //system('rm ' . $CONFIG['system']['pathInclude'] . 'backup/db/' . $file);
 
-
-$aFiles = scandir($CONFIG['system']['pathInclude'] . 'backup/db/');
+$aFiles = array_diff(scandir($CONFIG['system']['pathInclude'] . 'backup/db/'), array('..', '.','.gitignore'));
 sort($aFiles); 
 for($i = 0; $i < (count($aFiles) - 5); $i++) {
 	$file = $aFiles[$i];
