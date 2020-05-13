@@ -63,11 +63,11 @@ foreach($rowsCL as $rowCL){
 	$query1->bindValue(':id_lang', $rowCL['id_langid'], PDO::PARAM_INT);
 	$query1->bindValue(':id_dev', 0, PDO::PARAM_INT);
 	$query1->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-	$query1->bindValue(':code', $kiadocode, PDO::PARAM_INT);
+	$query1->bindValue(':code', $kiadocode, PDO::PARAM_STR);
 	$query1->execute();
 	$rows1 = $query1->fetchAll(PDO::FETCH_ASSOC);
 	$num1 = $query1->rowCount();
-
+	
 	if($num1 == 0){
 		##############################################################
 		// Process local PDF
@@ -88,7 +88,7 @@ foreach($rowsCL as $rowCL){
 	
 		$date->setTimestamp($filetime);
 		$lastmodified = $date->format('Y-m-d H:i:s');	
-
+		
 		if($code == '200' && $master == 2){
 			// save mediafolder
 			include($CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathFunctionsAdmin'] . 'fu_sys-media-upload-folder.php');

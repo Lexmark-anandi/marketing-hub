@@ -87,8 +87,8 @@ if($num > 0){
 		
 			$date->setTimestamp($filetime);
 			$lastmodified = $date->format('Y-m-d H:i:s');	
-			echo curl_error($ch);
-			
+			//echo "ERROR :: ".curl_error($ch)."<BR>";
+			//echo "CURL CODE :: ".$code."<BR>";
 			if($code == '200'){
 				// save mediafolder
 				include($CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathFunctionsAdmin'] . 'fu_sys-media-upload-folder.php');

@@ -27,7 +27,7 @@ if($varSQL['kiado'] != ''){
 										');
 	$query->bindValue(':id_count2lang', $varSQL['count2lang'], PDO::PARAM_INT);
 	$query->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-	$query->bindValue(':code', $varSQL['kiado'], PDO::PARAM_INT);
+	$query->bindValue(':code', $varSQL['kiado'], PDO::PARAM_STR);
 	$query->execute();
 	$rows = $query->fetchAll(PDO::FETCH_ASSOC);
 	$num = $query->rowCount();
