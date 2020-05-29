@@ -41,7 +41,7 @@ $CONFIG['activeSettings']['ovPage'] = 1;
 $CONFIG['activeSettings']['ovRange'] = $CONFIG['system']['ovRange'][0];
 $CONFIG['activeSettings']['ovType'] = 'grid';
 
-
+ 
 
 if($varSQL['partner'] == 0){
 	###############################################################################
@@ -186,8 +186,22 @@ if($varSQL['partner'] == 0){
 	}
 	$aArgsSave['id_data'] = $CONFIG['user']['id_pcid'];
 	
-	
-	$qry = 'INSERT INTO ' . $CONFIG['db'][0]['prefix'] . '_partnercompanies_ext
+	      
+        $PARENT_PROGRAM_NAME = '';
+        if($varSQL['range'] == 'bsd'){
+            $CONFIG['user']['bsd'] = 1;
+            $PARENT_PROGRAM_NAME = 'Business Solutions Diamond';
+        }
+        if($varSQL['range'] == 'distribution'){
+            $CONFIG['user']['distri'] = 1;
+            $PARENT_PROGRAM_NAME = 'Distribution Authorized';
+        }
+        if($varSQL['range'] == 'all'){
+            $PARENT_PROGRAM_NAME = 'Commercial Diamond';
+        }
+    
+        
+        $qry = 'INSERT INTO ' . $CONFIG['db'][0]['prefix'] . '_partnercompanies_ext
 				(id_count, id_lang, id_dev, id_cl, restricted_all, id_pcid, reseller_id, organisationid, company_name, address1, address2, address3, zipcode, city, id_countid, id_langid, phone, mobile, email, url, program_tier, bsd_silver, bsd_gold, bsd_diamond, create_at, create_from, change_from, parent_program_name)
 			VALUES
 				(:id_count, :id_lang, :id_dev, :id_cl, :restricted_all, :id_pcid, :reseller_id, :organisationid, :company_name, :address1, :address2, :address3, :zipcode, :city, :id_countid, :id_langid, :phone, :mobile, :email, :url, :program_tier, :bsd_silver, :bsd_gold, :bsd_diamond, :now, :create_from, :create_from, :parent_program_name)
@@ -209,7 +223,7 @@ if($varSQL['partner'] == 0){
 				bsd_silver = (:bsd_silver),
 				bsd_gold = (:bsd_gold),
 				bsd_diamond = (:bsd_diamond),
-                                parent_program_name =(:parent_program_name,
+                                parent_program_name =(:parent_program_name),
 				change_from = (:create_from),
 				del = (:nultime)
 			';
@@ -238,13 +252,12 @@ if($varSQL['partner'] == 0){
 	$queryC->bindValue(':bsd_silver', 'no', PDO::PARAM_STR);
 	$queryC->bindValue(':bsd_gold', ($varSQL['range'] == 'bsd') ? 'yes' : 'no', PDO::PARAM_STR);
 	$queryC->bindValue(':bsd_diamond', 'no', PDO::PARAM_STR);
-	$queryC->bindValue(':parent_program_name', ($varSQL['range'] == 'bsd') ? 'Business Solutions Silver' : ($varSQL['range'] == 'distribution') ? 'Distribution Authorized' : 'Commercial Authorized', PDO::PARAM_STR);
+	$queryC->bindValue(':parent_program_name', $PARENT_PROGRAM_NAME, PDO::PARAM_STR);
 	$queryC->bindValue(':now', $now, PDO::PARAM_STR);
 	$queryC->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 	$queryC->bindValue(':create_from', 999999999, PDO::PARAM_INT); 
 	$queryC->execute();
 	$numC = $queryC->rowCount();
-
 }else{
 	###############################################################################
 	// LOGIN AS PARTNER
