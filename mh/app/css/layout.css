@@ -1088,6 +1088,7 @@ h1 {
 	position: absolute;
     border: 1px dashed #999999;
     overflow: hidden;
+	display: table;
 	/*display: flex;*/
 }
 .compboxOuter[data-tcid="17"] {

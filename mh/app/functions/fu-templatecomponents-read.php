@@ -39,7 +39,6 @@ $queryStrTPE = 'SELECT
 			AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_lang = (:id_lang)
 			AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.del = (:nultime)
 			AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_ppid = (:id_ppid)
-			AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_pcid = (:id_pcid)
 			AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_asid = (:id_asid)
 
 	WHERE ' . $CONFIG['db'][0]['prefix'] . '_templatespageselements_uni.id_count = (:id_count)
@@ -54,7 +53,6 @@ $queryTPE = $CONFIG['dbconn'][0]->prepare($queryStrTPE);
 $queryTPE->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryTPE->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryTPE->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
-$queryTPE->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryTPE->bindValue(':id_dev', 0, PDO::PARAM_INT);
 $queryTPE->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 $queryTPE->bindValue(':id_tempid', $varSQL['id_tempid'], PDO::PARAM_INT);
@@ -375,14 +373,12 @@ $queryS = $CONFIG['dbconn'][0]->prepare('SELECT
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_dev = (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_asid = (:id_asid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_ppid = (:id_ppid)
 									');
 $queryS->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 $queryS->bindValue(':id_asid', $out['id_asid'], PDO::PARAM_INT);
-$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryS->execute();
 $rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);

@@ -130,7 +130,6 @@
 					AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_lang = (:id_lang)
 					AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.del = (:nultime)
 					AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_ppid = (:id_ppid)
-					AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_pcid = (:id_pcid)
 					AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_asid = (:id_asid)
 		
 			WHERE ' . $CONFIG['db'][0]['prefix'] . '_templatespageselements_uni.id_count = (:id_count)
@@ -145,7 +144,6 @@
 		$queryTPE->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 		$queryTPE->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 		$queryTPE->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
-		$queryTPE->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 		$queryTPE->bindValue(':id_dev', 0, PDO::PARAM_INT);
 		$queryTPE->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 		$queryTPE->bindValue(':id_tempid', $rows[0]['id_tempid'], PDO::PARAM_INT);
@@ -216,7 +214,7 @@
 				case '15': // Fileupload
 					$addClass = 'align' . $rowTPE['alignment'];
 				
-					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $content);
 
 					$htmlImg = $htmlHead;
 					$htmlImg .= '<body>';
@@ -243,7 +241,7 @@
 					system($imgOpt);
 					
 					array_push($aImagesCreated, $folder . '/' . $rowTPE['id_tpeid'] . '.png');
-					$background .= 'url(https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
+					$background .= 'url(http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
 				
 					$content = '';
 					break;
@@ -261,9 +259,9 @@
 //					}
 
 					$addClass = 'align' . $rowTPE['alignment'];
-//					$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
+//					$content = '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
 				
-					$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content = '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					break;
 	
 				// Partner contact
@@ -300,7 +298,7 @@
 					if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span>' . $rowsPC[0]['url'] . '</span>');
 
 					$content = '<div class="partnerContactCombination contactalignleft">';
-					$content .= '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content .= '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					$content .= '<div class="dummyPartnercontact"><span>';
 					$content .= implode('<span class="contactDelimiter"></span>', $addrTemp1);
 					$content .= '</span>';
@@ -318,7 +316,7 @@
 				case '19':
 					$aConAdd = json_decode($content_add, true);
 					$url = (isset($aConAdd['calltoactionurl'])) ? $aConAdd['calltoactionurl'] : '';
-					if(substr($url, 0, 4) != 'https') $url = 'https://' . $url;
+					if(substr($url, 0, 4) != 'http') $url = 'http://' . $url;
 	
 					$content = '<table border="0" cellpadding="0" cellspacing="0" class="buttonCalltoaction"><tr><td><a href="' . $url . '">' . $content . '</a></td></tr></table>';
 					break;
@@ -360,7 +358,7 @@
 	system($pdfOpt);
 	
 	// convert to cmyk
-	/*$convCmyk = 'gs ';
+	$convCmyk = 'gs ';
 	$convCmyk .= '-o ';
 	$convCmyk .= '"' . $folder . '/content_cmyk.pdf" ';
 	$convCmyk .= '-sDEVICE=pdfwrite ';
@@ -376,48 +374,14 @@
 	$convCmyk .= '1>&2 ';
 	system($convCmyk);
 	unlink($folder . '/content.pdf');
-	rename($folder . '/content_cmyk.pdf', $folder . '/content.pdf');*/
+	rename($folder . '/content_cmyk.pdf', $folder . '/content.pdf');
 
-	
-	
+
 	$base = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathMedia'] . $mediafile;
 	$overlay = '"' . $folder . '/content.pdf"';
-	
-	//system('pdftk ' . $base . ' multistamp ' . $overlay . '  output "' . $folder . '/output.pdf"');
-	
-	//echo "FOLDER :: ".$folder."<BR>";
-	//echo "OVERLAY :: ".$overlay."<BR>";
-	//echo "BASE :: ".$base."<BR>";
+	system('pdftk ' . $base . ' multistamp ' . $overlay . '  output "' . $folder . '/output.pdf"');
 	
 	
-	
-	system('java -jar '.$CONFIG['system']['pathInclude'].'pdfbox-app-2.0.16.jar PDFSplit "' . $folder . '/content.pdf"');
-	//echo 'java -jar '.$CONFIG['system']['pathInclude'].'pdfbox-app-2.0.16.jar PDFSplit "' . $folder . '/content.pdf"';
-	//echo "<br>";
-	
-	if (is_dir($folder)) 
-	{
-		if ($dh = opendir($folder)) 
-		{
-			
-			while (($file = readdir($dh)) !== false) 
-			{
-				//echo "filename: .".$file."<br />";
-				if(strpos($file, '-') !== false) 
-				{
-					$pageno = preg_replace('/[^0-9]/', '', $file);
-					$overlaystr .=' -page '.$pageno.' "'.$folder.'/'.$file.'"';
-				}
-			}
-        closedir($dh);
-		}
-	}
-	//echo "OVERLAYSTR :: ".$overlaystr;
-	//echo "<br>";
-
-	system('java -jar '.$CONFIG['system']['pathInclude'].'pdfbox-app-2.0.16.jar OverlayPDF ' . $base . ' ' . $overlaystr . ' "' . $folder . '/output.pdf"');
-	//echo 'java -jar '.$CONFIG['system']['pathInclude'].'pdfbox-app-2.0.16.jar OverlayPDF ' . $base . ' ' . $overlaystr . ' "' . $folder . '/output.pdf"';
-	//echo "<BR>";
 	$dirTarget = $CONFIG['system']['directoryRoot'] . 'assetimages/assets_thumbnails/';
 	$fileThumbnail = str_pad($varSQL['id_asid'], 6 ,'0', STR_PAD_LEFT) . '-' . $CONFIG['user']['id_countid'] . '-' . $CONFIG['user']['id_langid'] . '-' . md5($varSQL['id_asid'] . '_asset');
 	system('pdftoppm -png -r 96 -cropbox -aa yes -scale-to 400 -f 1 -l 1 "' . $folder . '/output.pdf" ' . $folder . '/' . $fileThumbnail);

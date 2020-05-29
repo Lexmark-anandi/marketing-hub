@@ -1,6 +1,6 @@
 (function () {
     window['f_##modul_name##']['dashboardwidgetassetspertype_Ready'] = function (obj, data, el) { 
-        console.log('A')
+        //console.log('A')
 		var labels = [];
 		for(var key in data){
 			labels.push(data[key].label);

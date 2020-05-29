@@ -388,6 +388,7 @@ $aComboxId = array();
 	$row['id_cl'] = $CONFIG['activeSettings']['id_clid'];
 	foreach($aComponents['pages'] as $aPages){
 		foreach($aPages as $compid => $aComponent){
+                        if($aComponent['fixed'] == '') $aComponent['fixed'] = 0;
 			if($aComponent['page'] == $varSQL['page'] && $aComponent['id_tpid'] == $varSQL['tpid']){
 				$aArgsSave['allVersions'] = array();
 				$aArgsSave['changedVersions'] = array();

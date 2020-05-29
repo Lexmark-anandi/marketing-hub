@@ -67,7 +67,7 @@ foreach($rowsCL as $rowCL){
 	$query1->execute();
 	$rows1 = $query1->fetchAll(PDO::FETCH_ASSOC);
 	$num1 = $query1->rowCount();
-	
+
 	if($num1 == 0){
 		##############################################################
 		// Process local PDF
@@ -88,7 +88,7 @@ foreach($rowsCL as $rowCL){
 	
 		$date->setTimestamp($filetime);
 		$lastmodified = $date->format('Y-m-d H:i:s');	
-		
+
 		if($code == '200' && $master == 2){
 			// save mediafolder
 			include($CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathFunctionsAdmin'] . 'fu_sys-media-upload-folder.php');

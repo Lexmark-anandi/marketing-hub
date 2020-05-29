@@ -109,5 +109,4 @@ if(file_exists($CONFIG['system']['directoryRoot'] . $pic)){
 echo $logo_thumbnail;
 
 
-
 ?>

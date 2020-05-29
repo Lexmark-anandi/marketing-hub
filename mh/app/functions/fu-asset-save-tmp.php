@@ -47,13 +47,11 @@ if(isset($varSQL['id_tempid'])){
 	$qry = 'UPDATE ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp SET
 				title = (:title)
 			WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_asid = (:id_asid)
-				AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_pcid = (:id_pcid)
 				AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_ppid = (:id_ppid)
 			';
 	$queryC = $CONFIG['dbconn'][0]->prepare($qry);
 	$queryC->bindValue(':title', $varSQL['assettitle'], PDO::PARAM_STR);
 	$queryC->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-	$queryC->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 	$queryC->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 	$queryC->execute();
 	$numC = $queryC->rowCount();

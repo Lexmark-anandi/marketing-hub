@@ -399,7 +399,8 @@ foreach($rowsC as $rowC){
 		$aL['function'] = 'rowEdit';
 		
 		
-		$link = (isset($_SERVER['HTTPS'])) ? 'https' : 'http' . '://' . $_SERVER['HTTP_HOST'] . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathAdmin'] . 'index.php?dl=' . base64_encode(json_encode($aL));
+                $link = (isset($_SERVER['HTTPS'])) ? 'https' : 'http';
+		$link .= '://' . $_SERVER['HTTP_HOST'] . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathAdmin'] . 'index.php?dl=' . base64_encode(json_encode($aL));
 		$TEMPLATE_DEEPLINK .= $rowL['title'] . ' (' . $rowL['category'] . '): ' . $rowL['country'] . ' / ' . $rowL['language'] . ':<br><a href="' . $link . '">' . $link . '</a><br><br>';
 	}
 

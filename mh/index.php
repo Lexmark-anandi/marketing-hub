@@ -54,14 +54,20 @@ $CONFIG['user']['language'] = $varSQL['LANG'];
 
 $CONFIG['user']['bsd'] = 0;
 $CONFIG['user']['distri'] = 0;
+$PARENT_PROGRAM_NAME = '';
 if(isset($varSQL['PARENT_PROGRAM_NAME']) && $varSQL['PARENT_PROGRAM_NAME'] != ''){
     $aProgTmp = explode(',', $varSQL['PARENT_PROGRAM_NAME']);
     foreach($aProgTmp as $prog){
         if(in_array(trim($prog), $CONFIG['aProgramm']['BSD'])){
             $CONFIG['user']['bsd'] = 1;
+            $PARENT_PROGRAM_NAME = trim($prog);
         }
         if(in_array(trim($prog), $CONFIG['aProgramm']['Distribution'])){
             $CONFIG['user']['distri'] = 1;
+            $PARENT_PROGRAM_NAME = trim($prog);
+        }
+        if(in_array(trim($prog), $CONFIG['aProgramm']['Commercial'])){
+            $PARENT_PROGRAM_NAME = trim($prog);
         }
     }
 }else{
@@ -330,7 +336,7 @@ $queryC->bindValue(':program_tier', $varSQL['Program_Tier'], PDO::PARAM_STR);
 $queryC->bindValue(':bsd_silver', $varSQL['BSD_Silver'], PDO::PARAM_STR);
 $queryC->bindValue(':bsd_gold', $varSQL['BSD_Gold'], PDO::PARAM_STR);
 $queryC->bindValue(':bsd_diamond', $varSQL['BSD_Diamond'], PDO::PARAM_STR);
-$queryC->bindValue(':parent_program_name', $varSQL['PARENT_PROGRAM_NAME'], PDO::PARAM_STR);
+$queryC->bindValue(':parent_program_name', $PARENT_PROGRAM_NAME, PDO::PARAM_STR);
 $queryC->bindValue(':now', $now, PDO::PARAM_STR);
 $queryC->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 $queryC->bindValue(':create_from', 999999999, PDO::PARAM_INT); 

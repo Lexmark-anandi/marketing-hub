@@ -6,6 +6,7 @@ if($aArgs['data']['components'] != ''){
 	$aDataComponents = json_decode($aArgs['data']['components'], true);
 	foreach($aDataComponents['pages'] as $kPage => $aPageComponents){
 		foreach($aPageComponents as $kComponent => $aComponent){
+                        if($aComponent['fixed'] == '') $aComponent['fixed'] = 0;
 			$id_tpeid = $aComponent['id_tpeid'];
 			
 			if(!array_key_exists('n_' . $id_tpeid, $aArgsSaveTPE)){

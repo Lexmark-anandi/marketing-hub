@@ -238,7 +238,7 @@ $queryI->bindValue(':restricted_all', 0, PDO::PARAM_INT);
 $queryI->bindValue(':id_asid', $varSQL['asid'], PDO::PARAM_INT);
 $queryI->bindValue(':id_tempid', $varSQL['tempid'], PDO::PARAM_INT);
 $queryI->bindValue(':id_bfid', $varSQL['bfid'], PDO::PARAM_INT);
-$queryI->bindValue(':id_etid', $varSQL['etid'], PDO::PARAM_INT);
+$queryI->bindValue(':id_etid', ($varSQL['etid'] != '') ? $varSQL['etid'] : 0, PDO::PARAM_INT);
 $queryI->bindValue(':id_tpid', $varSQL['tpid'], PDO::PARAM_INT);
 $queryI->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryI->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);

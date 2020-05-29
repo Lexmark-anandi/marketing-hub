@@ -146,7 +146,6 @@
 				AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_lang = (:id_lang)
 				AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.del = (:nultime)
 				AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_ppid = (:id_ppid)
-				AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_pcid = (:id_pcid)
 				AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_uni.id_asid = (:id_asid)
 	
 		WHERE ' . $CONFIG['db'][0]['prefix'] . '_templatespageselements_uni.id_count = (:id_count)
@@ -161,7 +160,6 @@
 	$queryTPE->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 	$queryTPE->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 	$queryTPE->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
-	$queryTPE->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 	$queryTPE->bindValue(':id_dev', 0, PDO::PARAM_INT);
 	$queryTPE->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 	$queryTPE->bindValue(':id_tempid', $rows[0]['id_tempid'], PDO::PARAM_INT);
@@ -232,14 +230,14 @@
 			case '15': // Fileupload
 				$addClass = 'align' . $rowTPE['alignment'];
 				
-				$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+				$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $content);
 				break;
 
 			// Partner logo
 			case '11':
 				$addClass = 'align' . $rowTPE['alignment'];
 				
-				$content = 'https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'];
+				$content = 'http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'];
 				break;
 
 			// Partner contact
@@ -298,7 +296,7 @@
 				if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span class="pc_single pc_url"><a href="http://' . $rowsPC[0]['url'] . '">' . $rowsPC[0]['url'] . '</a></span>');
 
 				$content = '<div class="partnerContactCombination contactalignleft">';
-				$content .= '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+				$content .= '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 				$content .= '<div class="dummyPartnercontact">';
 				$content = '<p align="left">';
 				$content .= implode('<br />', $addrTemp1);
@@ -371,7 +369,6 @@
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.id_asid = (:id_asid)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.id_etid = (:id_etid)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.showframe = (:one)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.id_pcid = (:id_pcid)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.id_ppid = (:id_ppid)
 											ORDER BY ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_uni.rank
 										');
@@ -379,7 +376,6 @@
 	$queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 	$queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 	$queryS->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-	$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 	$queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 	$queryS->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 	$queryS->bindValue(':id_etid', $rows[0]['id_etid'], PDO::PARAM_INT);
@@ -387,7 +383,7 @@
 	$queryS->execute();
 	$rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);
 	$numS = $queryS->rowCount();
-
+        
 	$n = 0;
 	$row = 0;
 	$nRow = 0;
@@ -489,13 +485,13 @@
 					
 					$searchpattern = '/src="(.*)"/siU';
 					preg_match ($searchpattern, $rowS['image'], $match);
-					$content = 'https://qashrwrtapp001.lex1.lexmark.com' . $match[1];
+					$content = 'http://193.110.207.229' . $match[1];
 //					
-//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
+//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
 //
 //echo $match[1];					
 //				
-//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
+//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
 					break;
 				
 				// PN
@@ -575,7 +571,7 @@
 				case '15': // Fileupload
 					$addClass = 'align' . $rowTPE['alignment'];
 				
-					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $content);
 					break;
 	
 				// Partner logo
@@ -642,7 +638,7 @@
 					if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span class="pc_single pc_url"><a href="http://' . $rowsPC[0]['url'] . '">' . $rowsPC[0]['url'] . '</a></span>');
 	
 					$content = '<div class="partnerContactCombination contactalignleft">';
-					$content .= '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content .= '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					$content .= '<div class="dummyPartnercontact">';
 					$content = '<p align="left">';
 					$content .= implode('<br />', $addrTemp1);

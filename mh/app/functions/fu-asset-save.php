@@ -47,13 +47,11 @@ $numC = $queryC->rowCount();
 $qry = 'UPDATE ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp SET
 			title = (:title)
 		WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_asid = (:id_asid)
-			AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_pcid = (:id_pcid)
 			AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_ppid = (:id_ppid)
 		';
 $queryC = $CONFIG['dbconn'][0]->prepare($qry);
 $queryC->bindValue(':title', $varSQL['assettitle'], PDO::PARAM_STR);
 $queryC->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-$queryC->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryC->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryC->execute();
 $numC = $queryC->rowCount();
@@ -391,14 +389,12 @@ $queryS = $CONFIG['dbconn'][0]->prepare('SELECT
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_dev = (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_asid = (:id_asid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_tmp.id_ppid = (:id_ppid)
 									');
 $queryS->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 $queryS->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryS->execute();
 $rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);
@@ -539,14 +535,12 @@ $queryS = $CONFIG['dbconn'][0]->prepare('SELECT
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspages_tmp.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspages_tmp.id_dev = (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspages_tmp.id_asid = (:id_asid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspages_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspages_tmp.id_ppid = (:id_ppid)
 									');
 $queryS->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 $queryS->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryS->execute();
 $rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);
@@ -679,14 +673,12 @@ $queryS = $CONFIG['dbconn'][0]->prepare('SELECT
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_dev = (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_asid = (:id_asid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetspageselements_tmp.id_ppid = (:id_ppid)
 									');
 $queryS->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 $queryS->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryS->execute();
 $rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);
@@ -971,14 +963,12 @@ $queryS = $CONFIG['dbconn'][0]->prepare('SELECT
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_dev = (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_asid = (:id_asid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_ppid = (:id_ppid)
 									');
 $queryS->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 $queryS->bindValue(':nul', 0, PDO::PARAM_INT);
 $queryS->bindValue(':id_asid', $varSQL['id_asid'], PDO::PARAM_INT);
-$queryS->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $queryS->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $queryS->execute();
 $rowsS = $queryS->fetchAll(PDO::FETCH_ASSOC);

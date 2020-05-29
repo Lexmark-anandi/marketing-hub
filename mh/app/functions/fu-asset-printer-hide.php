@@ -150,10 +150,8 @@ if($varSQL['frame'] == 'product'){
 										UPDATE ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp SET
 											showframe = (:showframe)
 										WHERE ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_apid = (:id_apid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assetsproducts_tmp.id_ppid = (:id_ppid)
 										');
-	$queryPr->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 	$queryPr->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 	$queryPr->bindValue(':id_apid', $varSQL['apid'], PDO::PARAM_INT);
 	$queryPr->bindValue(':showframe', $varSQL['showframe'], PDO::PARAM_INT);

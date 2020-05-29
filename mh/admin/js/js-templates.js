@@ -907,7 +907,7 @@
 			}
 		}
 
-		
+		console.log(objComponents);
 		if(objComponents.pages['page_' + compPageId] != undefined){
 			for(key in objComponents.pages['page_' + compPageId]){
 				var content = objComponents.pages['page_' + compPageId][key]['content'];

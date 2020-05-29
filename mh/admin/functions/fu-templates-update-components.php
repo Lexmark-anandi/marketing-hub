@@ -7,6 +7,7 @@ if($aArgs['data']['components'] != ''){
 	foreach($aDataComponents['pages'] as $kPage => $aPageComponents){
 		foreach($aPageComponents as $kComponent => $aComponent){
 			$id_tpeid = $aComponent['id_tpeid'];
+                        if($aComponent['fixed'] == '') $aComponent['fixed'] = 0;
 			
 			if(!array_key_exists('n_' . $id_tpeid, $aArgsSaveTPE)){
 				$aArgsSaveTPE['n_' . $id_tpeid] = array();

@@ -353,7 +353,6 @@ $query = $CONFIG['dbconn'][0]->prepare('
 										ON ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count = (:id_count)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang = (:id_lang)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_pcid = (:id_pcid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_ppid = (:id_ppid)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
 									
@@ -373,7 +372,6 @@ $query = $CONFIG['dbconn'][0]->prepare('
 									');
 $query->bindValue(':id_count', $CONFIG['user']['id_countid'], PDO::PARAM_INT);
 $query->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
-$query->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 $query->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 $query->bindValue(':id_promid', $varSQL['id_promid'], PDO::PARAM_INT);
 $query->bindValue(':now', $now, PDO::PARAM_STR);

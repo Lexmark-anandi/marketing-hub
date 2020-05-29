@@ -191,7 +191,6 @@ if(is_numeric($CONFIG['activeSettings']['id_page']) || $CONFIG['activeSettings']
 											ON ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count = (:id_count)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang = (:id_lang)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_pcid = (:id_pcid)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_ppid = (:id_ppid)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
 										
@@ -241,7 +240,6 @@ if(is_numeric($CONFIG['activeSettings']['id_page']) || $CONFIG['activeSettings']
 	$query->bindValue(':id_lang', $CONFIG['user']['id_langid'], PDO::PARAM_INT);
 	if($condSearch != '') $query->bindValue(':search', '%' . $varSQL['searchfield'] . '%', PDO::PARAM_STR);
 	if($condCat != '') $query->bindValue(':id_caid', $asCat, PDO::PARAM_INT);
-	$query->bindValue(':id_pcid', $CONFIG['user']['id_pcid'], PDO::PARAM_INT);
 	$query->bindValue(':id_ppid', $CONFIG['user']['id_ppid'], PDO::PARAM_INT);
 	$query->bindValue(':now', $now, PDO::PARAM_STR);
 	$query->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
