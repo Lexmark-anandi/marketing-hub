@@ -258,9 +258,14 @@ $query->bindValue(':id_tconid', $varSQL['configuration'], PDO::PARAM_INT);
 $query->execute();
 $rows = $query->fetchAll(PDO::FETCH_ASSOC);
 $num = $query->rowCount();
+
+
+	
+	
 foreach($rows as $row){
 	array_push($aTCE, $row['id_tceid']);
 }
+
 
 
 // _loc
@@ -742,6 +747,7 @@ foreach($aTCE as $tce){
 			$queryI->execute();
 			$numI = $queryI->rowCount();
 			
+
 			// build tempdate
 			$key = $version[0] . '_' . $version[1];
 			if(!array_key_exists($key, $aComponentsTempdata)){
@@ -788,7 +794,6 @@ foreach($aTCE as $tce){
 		}
 	}
 }
-
 
 
 
@@ -847,7 +852,7 @@ foreach($aLocalVersions as $version){
 		$queryTd2->bindValue(':id_mod', $CONFIG['page']['id_mod'], PDO::PARAM_INT);
 		$queryTd2->bindValue(':id_count', $rowTd['id_count'], PDO::PARAM_INT);
 		$queryTd2->bindValue(':id_lang', $rowTd['id_lang'], PDO::PARAM_INT);
-		$queryTd2->bindValue(':data', json_encode($aTemddata), PDO::PARAM_INT);
+		$queryTd2->bindValue(':data', json_encode($aTemddata), PDO::PARAM_STR);
 		$queryTd2->execute();
 		$numTd2 = $queryTd2->rowCount();
 	}
@@ -878,7 +883,6 @@ $queryTd->bindValue(':id_dev', $CONFIG['settings']['formDevice'], PDO::PARAM_INT
 $queryTd->execute();
 $rowsTd = $queryTd->fetchAll(PDO::FETCH_ASSOC);
 $numTd = $queryTd->rowCount();
-
 $aTemddata = json_decode($rowsTd[0]['data'], true);
 $aComp = json_decode($aTemddata['components'], true);
 $out['pages'] = $aComp['pages'];
