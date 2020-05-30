@@ -214,7 +214,7 @@
 				case '15': // Fileupload
 					$addClass = 'align' . $rowTPE['alignment'];
 				
-					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . '', $content);
+					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
 
 					$htmlImg = $htmlHead;
 					$htmlImg .= '<body>';
@@ -241,7 +241,7 @@
 					system($imgOpt);
 					
 					array_push($aImagesCreated, $folder . '/' . $rowTPE['id_tpeid'] . '.png');
-					$background .= 'url(http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
+					$background .= 'url(https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
 				
 					$content = '';
 					break;
@@ -259,9 +259,9 @@
 //					}
 
 					$addClass = 'align' . $rowTPE['alignment'];
-//					$content = '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
+//					$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
 				
-					$content = '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					break;
 	
 				// Partner contact
@@ -298,7 +298,7 @@
 					if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span>' . $rowsPC[0]['url'] . '</span>');
 
 					$content = '<div class="partnerContactCombination contactalignleft">';
-					$content .= '<div class="componentPartnerlogo"><img src="http://193.110.207.229' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					$content .= '<div class="dummyPartnercontact"><span>';
 					$content .= implode('<span class="contactDelimiter"></span>', $addrTemp1);
 					$content .= '</span>';
