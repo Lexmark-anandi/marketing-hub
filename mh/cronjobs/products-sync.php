@@ -49,8 +49,10 @@ $query->bindValue(':active', 1, PDO::PARAM_INT);
 $query->execute();
 $rows = $query->fetchAll(PDO::FETCH_ASSOC);
 $num = $query->rowCount();
-
+echo "\nNUM :: ".$num."\n";
 foreach($rows as $row){
+	
+	echo "COUNTRY ID :: ".$row['id_countid']." --- LANGUAGE ID :: ".$row['id_langid']."\n";
 	$date = new DateTime();
 	$now = $date->format('Y-m-d H:i:s');
 	
@@ -385,7 +387,7 @@ foreach($rows as $row){
 	$queryC->execute();
 	$numC = $queryC->rowCount();
 	
-
+	
 //echo $row['id_countid'].'.'.$row['id_langid'].'.'.$numS.'-';
 }
 

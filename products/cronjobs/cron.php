@@ -26,7 +26,7 @@ $CONFIG['USER']['activeClient'] = 0;
 
 getConnection(0); 
 
-$query_select_product = $CONFIG['dbconn']->prepare('SELECT status FROM ' . $CONFIG['db'][0]['prefix'] .'_cron_status');
+/*$query_select_product = $CONFIG['dbconn']->prepare('SELECT status FROM ' . $CONFIG['db'][0]['prefix'] .'_cron_status');
 $query_select_product->execute();
 $rowproduct = $query_select_product->fetch(PDO::FETCH_ASSOC);
 
@@ -38,7 +38,7 @@ if(($rowproduct['status'] == 0) && ($rowmh['status'] == 0))
 {
 	
 $query_update = $CONFIG['dbconn']->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 1');
-$query_update->execute();
+$query_update->execute();*/
 
 // Set Config Mailings
 $queryM = $CONFIG['dbconn']->prepare('
@@ -81,8 +81,8 @@ include_once($CONFIG['system']['pathInclude'] . "cronjobs/db-backup.php");
 include_once($CONFIG['system']['pathInclude'] . "cronjobs/import-lpmd.php");
 //include_once($CONFIG['system']['pathInclude'] . "cronjobs/setimages.php");
 
-$query_update = $CONFIG['dbconn']->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 0');
-$query_update->execute();
+/*$query_update = $CONFIG['dbconn']->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 0');
+$query_update->execute();*/
 
 $time_end = microtime(true);
 
@@ -93,5 +93,5 @@ echo " END => $hrs:$mins:$secs\n";
 
 $execution_time = ($time_end - $time_start)/60;
 echo "Total Execution Time :: ".$execution_time." Mins.";
-}
+//}
 ?>

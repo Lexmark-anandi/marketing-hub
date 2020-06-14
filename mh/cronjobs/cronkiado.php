@@ -92,23 +92,9 @@ $CONFIG['mail'][0]['legal_notices'] = $rowsM[0]['legal_notices'];
 	chmod('../admin/tmp/cron/' . $subfolder, 0777);
 
 
-echo "\nStarts MH DB Backup"."\n";
-include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/db-backup.php');
-echo "\nStarts products-sync.php"."\n";
-include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/products-sync.php');
-echo "Starts prodtypes-sync.php"."\n";
-include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/prodtypes-sync.php');
-//include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/productimages-sync.php');
+
 echo "Starts kiado-sync.php"."\n";
 include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/kiado-sync.php');
-
-echo "Starts products-sync-withdrawn.php"."\n";
-include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/products-sync-withdrawn.php');
-
-echo "Starts products-set-announce.php"."\n";
-include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/products-set-announce.php');
-
-
 
 
 	$dateS = new DateTime();
