@@ -1,0 +1,5 @@
+[wrtapp@pashrwrtapp001 ~]$ crontab -l
+30 14 * * * /warranty/html/products/cronjobs/pull_sftp_feeds.sh
+0 15 * * * /warranty/html/products/cronjobs/push_sftpfeeds_into_product.sh
+0 19  * * * /warranty/html/mh/cronjobs/push_sftpfeeds_into_mh.sh
+45 23  * * 6 /warranty/html/mh/cronjobs/kiado_sync_with_mh.sh

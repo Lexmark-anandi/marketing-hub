@@ -85,11 +85,11 @@ $CONFIG['mail'][0]['legal_notices'] = $rowsM[0]['legal_notices'];
 
 
 
-	$dateS = new DateTime();
+	/*$dateS = new DateTime();
 	$nowS = $dateS->format('Y-m-d-H-i-s');
 	$subfolder = 'a'.$nowS;
 	mkdir('../admin/tmp/cron/' . $subfolder, 0777);
-	chmod('../admin/tmp/cron/' . $subfolder, 0777);
+	chmod('../admin/tmp/cron/' . $subfolder, 0777);*/
 
 
 
@@ -97,11 +97,11 @@ echo "Starts kiado-sync.php"."\n";
 include_once($CONFIG['system']['directoryRoot'] . 'cronjobs/kiado-sync.php');
 
 
-	$dateS = new DateTime();
+	/*$dateS = new DateTime();
 	$nowS = $dateS->format('Y-m-d-H-i-s');
 	$subfolder = 'z'.$nowS;
 	mkdir('../admin/tmp/cron/' . $subfolder, 0777);
-	chmod('../admin/tmp/cron/' . $subfolder, 0777);
+	chmod('../admin/tmp/cron/' . $subfolder, 0777);*/
 
 /*echo '\nUPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 0';
 $query_update = $CONFIG['dbconn'][0]->prepare('UPDATE ' . $CONFIG['db'][0]['prefix'] .'_cron_status SET status = 0');
