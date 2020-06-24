@@ -67,6 +67,14 @@ $CONFIG['grid']['sortable_rows'] = $rows[0]['sortable_rows'];
 $CONFIG['grid']['addoptions'] = array();
 $aGridOptions = json_decode($rows[0]['grid_options'], true);
 $aGridOptionsConditions = json_decode($rows[0]['grid_options_conditions'], true);
+if(empty($rows[0]['grid_options']))
+{
+	 $aGridOptions = array();
+}
+if(empty($rows[0]['grid_options_conditions']))
+{
+	 $aGridOptionsConditions = array();
+}
 if(count($aGridOptions) > 0){
 	foreach($aGridOptions as $opt=>$val){
 		if($aGridOptionsConditions[$opt] == ''){

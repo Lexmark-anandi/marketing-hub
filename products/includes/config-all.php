@@ -48,7 +48,7 @@ $CONFIG['db'][0]['password'] = '';
 $CONFIG['db'][0]['database'] = '';
 
 ## System ##
-$CONFIG['system']['protocol'] = 'http';
+$CONFIG['system']['protocol'] = 'https';
 $CONFIG['system']['cookie_secure'] = false;
 $CONFIG['system']['pass_iteration'] = 8;
 $CONFIG['system']['pass_portable'] = false;

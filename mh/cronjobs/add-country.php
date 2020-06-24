@@ -19,8 +19,8 @@ ini_set("max_execution_time", "6000");
 
 getConnection(0); 
 
-$newCount = 41;
-$newLang = 2;
+//$newCount = 62;
+//$newLang = 31;
 
 $aTabs = array(
 				'sys_terms_fe' => 'id_tfe_data',
@@ -62,7 +62,7 @@ foreach($aTabs as $tab => $id){
 											AND ' . $CONFIG['db'][0]['prefix'] . $tab . '.id_dev = (:id_dev)
 											AND ' . $CONFIG['db'][0]['prefix'] . $tab . '.id_cl IN(0,' . $CONFIG['activeSettings']['id_clid'] . ')
 										');
-	$query->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
+	//$query->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 	$query->bindValue(':id_count', 0, PDO::PARAM_INT);
 	$query->bindValue(':id_lang', 0, PDO::PARAM_INT);
 	$query->bindValue(':id_dev', 0, PDO::PARAM_INT);
@@ -79,7 +79,7 @@ foreach($aTabs as $tab => $id){
 		$qry .= 'INSERT ' . $CONFIG['db'][0]['prefix'] . $tab . ' SELECT * FROM tmp; ';
 		$qry .= 'TRUNCATE tmp; ';
 		$query2 = $CONFIG['dbconn'][0]->prepare($qry);
-//////		$query2->execute();
+	    $query2->execute();
 	}
 }
 
