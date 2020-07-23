@@ -61,60 +61,6 @@ foreach($rowsAC as $rowAC){
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang <> (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_promid = (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_campid = (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count IN (' . implode(',', array_keys($CONFIG['user']['countries'])) . ')
-										');
-	$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);
-	$queryN->bindValue(':nul', 0, PDO::PARAM_INT);
-	$queryN->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-	$queryN->execute();
-	$rowsN = $queryN->fetchAll(PDO::FETCH_ASSOC);
-	$numN = $queryN->rowCount();
-	$numAll += $numN;
-
-	$queryN = $CONFIG['dbconn'][0]->prepare('
-										SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid
-											
-										FROM ' . $CONFIG['db'][0]['prefix'] . '_assets_uni
-										
-										INNER JOIN ' . $CONFIG['db'][0]['prefix'] . '_templates_uni
-											ON ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_count = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_lang = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid
-
-										WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count <> (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang <> (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_promid <> (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_campid = (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count IN (' . implode(',', array_keys($CONFIG['user']['countries'])) . ')
-										');
-	$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);
-	$queryN->bindValue(':nul', 0, PDO::PARAM_INT);
-	$queryN->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-	$queryN->execute();
-	$rowsN = $queryN->fetchAll(PDO::FETCH_ASSOC);
-	$numN = $queryN->rowCount();
-	$numAll += $numN;
-
-	$queryN = $CONFIG['dbconn'][0]->prepare('
-										SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid
-											
-										FROM ' . $CONFIG['db'][0]['prefix'] . '_assets_uni
-										
-										INNER JOIN ' . $CONFIG['db'][0]['prefix'] . '_templates_uni
-											ON ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_count = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_lang = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid
-
-										WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count <> (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang <> (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_promid = (:nul)
-											AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_campid <> (:nul)
 											AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count IN (' . implode(',', array_keys($CONFIG['user']['countries'])) . ')
 										');
 	$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);

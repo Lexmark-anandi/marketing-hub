@@ -1,6 +1,7 @@
-<?php 
+<?php
 if(isset($_GET['initLogin'])) $CONFIG['initLogin'] = true;
 include_once(__DIR__ . '/../config-app.php');
+
 $varSQL = getPostData();
 
 $date = new DateTime();
@@ -10,6 +11,7 @@ $out = array();
 $aExportfiles = array();
 
 if($varSQL['id_promid'] == 0 && $varSQL['id_campid'] == 0){
+	
 	$queryAS = $CONFIG['dbconn'][0]->prepare('
 										SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.components,
 											' . $CONFIG['db'][0]['prefix'] . '_assets_uni.title,
@@ -48,8 +50,8 @@ if($varSQL['id_promid'] == 0 && $varSQL['id_campid'] == 0){
 	$rowsAS = $queryAS->fetchAll(PDO::FETCH_ASSOC);
 	$numAS = $queryAS->rowCount();
 	
-
 }else if($varSQL['id_promid'] > 0){
+	
 	$queryAS = $CONFIG['dbconn'][0]->prepare('
 										SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.components,
 											' . $CONFIG['db'][0]['prefix'] . '_assets_uni.title,
@@ -90,8 +92,10 @@ if($varSQL['id_promid'] == 0 && $varSQL['id_campid'] == 0){
 	$rowsAS = $queryAS->fetchAll(PDO::FETCH_ASSOC);
 	$numAS = $queryAS->rowCount();
 	
-
+		
 }else if($varSQL['id_campid'] > 0){
+	
+		
 	$queryAS = $CONFIG['dbconn'][0]->prepare('
 										SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.components,
 											' . $CONFIG['db'][0]['prefix'] . '_assets_uni.title,
@@ -131,12 +135,17 @@ if($varSQL['id_promid'] == 0 && $varSQL['id_campid'] == 0){
 	$queryAS->execute();
 	$rowsAS = $queryAS->fetchAll(PDO::FETCH_ASSOC);
 	$numAS = $queryAS->rowCount();
+	
+	
 }
+
+//$time_start_for_loop = microtime(true);
 
 
 foreach($rowsAS as $rowAS){
 	$aExportTmp = array();
 	$html = '';
+	$time_start_1 = microtime(true);
 	
 	$query = $CONFIG['dbconn'][0]->prepare('
 										SELECT 
@@ -184,8 +193,15 @@ foreach($rowsAS as $rowAS){
 	$rows = $query->fetchAll(PDO::FETCH_ASSOC);
 	$num = $query->rowCount();
 	
+	//$time_end_1 = microtime(true);
+	
+	//$execution_time_1 = ($time_end_1 - $time_start_1);
+   //echo "Total Execution Time 1 :: ".$execution_time_1." microsecs.";
 	
 	if($num > 0){
+		
+		$time_start_2 = microtime(true);
+		
 		$rows[0]['id_tempid'] = $rowAS['id_tempid'];
 		$rows[0]['title'] = $rowAS['title'];
 		$rows[0]['currency'] = $rowAS['currency'];
@@ -213,12 +229,20 @@ foreach($rowsAS as $rowAS){
 		$queryEx->bindValue(':exported_at', $now, PDO::PARAM_STR);
 		$queryEx->execute();
 
-
+		
+		//$time_end_2 = microtime(true);
+			
+		//$execution_time_2 = ($time_end_2 - $time_start_2);
+		//echo "Total Execution Time 2 :: ".$execution_time_2." microsecs.";
 		
 		$foldername = $CONFIG['user']['id_ppid'] . '-' . str_replace(' ', '_', microtime());
 		$folder = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername;
 		mkdir($folder); 
 		chmod($folder, 0777);
+		
+		//$time_start_3 = microtime(true);
+		
+
 	
 		####################################
 		// Select partner contact and logo
@@ -306,6 +330,13 @@ foreach($rowsAS as $rowAS){
 		$aComponents = json_decode($rows[0]['components'], true);
 		$mediafile = '';
 		####################################
+	
+		//$time_end_3 = microtime(true);
+				
+		//$execution_time_3 = ($time_end_3 - $time_start_3);
+		//echo "Total Execution Time 3 :: ".$execution_time_3." Micoins.";
+
+		//$time_start_4 = microtime(true);
 		
 		switch($id_caid){
 			// Banner
@@ -352,10 +383,16 @@ foreach($rowsAS as $rowAS){
 		}
                                             
 		
+		//$time_end_4 = microtime(true);
+			
+		//$execution_time_4 = ($time_end_4 - $time_start_4);
+		//echo "Total Execution Time 4 :: ".$execution_time_4." Micrsecs.";
+		
 		array_push($aExportfiles, $aExportTmp);
 
 
-                
+        //$time_start_5 = microtime(true);
+		        
                 ##################################################################
                 // allocation of assets on the basis of contact data, if these were created by internal employees - for statistics
                 if($CONFIG['user']['id_pcid'] == 29){
@@ -641,14 +678,29 @@ foreach($rowsAS as $rowAS){
                         }
                     }
                 }
+				
+				
+				//$time_end_5 = microtime(true);
+							
+				//$execution_time_5 = ($time_end_5 - $time_start_5);
+				//echo "Total Execution Time 5 :: ".$execution_time_5." Microsecs.";
                 ##################################################################
 	}
 }
 
+//$time_end_for_loop = microtime(true);
 
+//$execution_time_for_loop = ($time_end_for_loop - $time_start_for_loop)/60;
+//echo "Total Execution Time FOR LOOP :: ".$execution_time_for_loop." Mins.";
 
+//var_dump($aExportfiles);
 
 if(count($aExportfiles) > 1){
+	//$time_start = microtime(true);
+	//$currenttime = date('h:i:s:u');
+	//list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+	//echo " START 9 => $hrs:$mins:$secs\n";
+	
 	$folder = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathApp'] . 'tmp/' . $CONFIG['user']['id_ppid'] . '-' . str_replace(' ', '_', microtime());
 	mkdir($folder); 
 	chmod($folder, 0777);
@@ -660,6 +712,8 @@ if(count($aExportfiles) > 1){
 		exit();
 	}
 	foreach($aExportfiles as $key => $aExportfile){
+		//if(file_exists($aExportfile['filesys_filename']))
+		//	echo $aExportfile['filesys_filename'];
 		$zip->addFile($aExportfile['filesys_filename'], str_replace(' ', '_', str_replace(':', '-', $aExportfile['filename_template'])));
 	}
 	$zip->close();
@@ -686,15 +740,31 @@ if(count($aExportfiles) > 1){
 		unlink($aExportfile['folder'] . '/' . $aExportfile['thumbnail']);
 		rmdir($aExportfile['folder']);
 	}
-	
 	//var_dump($aExportfiles);
+	
+	//$time_end = microtime(true);
+	//$currenttime = date('h:i:s:u');
+	//list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+	//echo " END 9 => $hrs:$mins:$secs\n";
+	//$execution_time = ($time_end - $time_start)/60;
+	//echo "Total Execution Time 9 :: ".$execution_time." Mins.";
 }else{
+	//$time_start = microtime(true);
+	//$currenttime = date('h:i:s:u');
+	//list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+	//echo " START 10 => $hrs:$mins:$secs\n";
 	if(file_exists($aExportfiles[0]['folder'] . '/' . $aExportfiles[0]['thumbnail'])) rename($aExportfiles[0]['folder'] . '/' . $aExportfiles[0]['thumbnail'], $CONFIG['system']['directoryRoot'] . 'assetimages/assets_thumbnails/' . $aExportfiles[0]['thumbnail']);
 	
 	$out['filename'] = $aExportfiles[0]['filename'];
 	$out['filesys_filename'] = $aExportfiles[0]['filesys_filename'];
 	$out['thumbnail'] = $aExportfiles[0]['thumbnail'] . '?t=' . time();
 	$out['folder'] = $aExportfiles[0]['folder'];
+	//$time_end = microtime(true);
+	//$currenttime = date('h:i:s:u');
+	//list($hrs,$mins,$secs,$msecs) = explode(':',$currenttime);
+	//echo " END 10 => $hrs:$mins:$secs\n";
+	//$execution_time = ($time_end - $time_start)/60;
+	//echo "Total Execution Time 10 :: ".$execution_time." Mins.";
 }
 
 		

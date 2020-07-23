@@ -197,7 +197,7 @@
 
 								$content = '';
 								if($rowsS[0]['filesys_filename'] != ''){
-									$content = '<div class="componentProductimage"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsS[0]['filesys_filename'] . '"></div>';
+									$content = '<div class="componentProductimage"><img src="'.$CONFIG['system']['directoryRoot'] . 'media/' . $rowsS[0]['filesys_filename'] . '"></div>';
 								}
 								break;
 								
@@ -260,14 +260,14 @@
 							case '15': // Fileupload
 								$addClass = 'align' . $rowTPE['alignment'];
 				
-								$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+								$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot'] . '', $content);
 								break;
 				
 							// Partner logo
 							case '11':
 								$addClass = 'align' . $rowTPE['alignment'];
 				
-								$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div>';
+								$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'custom/admin/img/dummy-logo.png"></div>';
 								break;
 				
 							// Partner contact
@@ -279,7 +279,7 @@
 							
 							// Partner contact / logo combination
 							case '16':
-								$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
+								$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
 								break;
 			
 							// Color area
@@ -483,7 +483,7 @@
 									$addClass = 'align' . $rowTPE['alignment'];
 									$content = '';
 									if($rowS['filesys_filename'] != ''){
-										$content = '<div class="componentProductimage"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowS['filesys_filename'] . '"></div>';
+										$content = '<div class="componentProductimage"><img src="'.$CONFIG['system']['directoryRoot'] . 'media/' . $rowS['filesys_filename'] . '"></div>';
 									}
 									break;
 								
@@ -560,14 +560,14 @@
 								case '15': // Fileupload
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot'] . '', $content);
 									break;
 					
 								// Partner logo
 								case '11':
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div>';
+									$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'custom/admin/img/dummy-logo.png"></div>';
 									break;
 					
 								// Partner contact
@@ -579,7 +579,7 @@
 								
 								// Partner contact / logo combination
 								case '16':
-									$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
+									$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot']. 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
 									break;
 			
 								// Color area

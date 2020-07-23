@@ -214,7 +214,7 @@
 				case '15': // Fileupload
 					$addClass = 'align' . $rowTPE['alignment'];
 				
-					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot'] . '', $content);
 
 					$htmlImg = $htmlHead;
 					$htmlImg .= '<body>';
@@ -241,7 +241,7 @@
 					system($imgOpt);
 					
 					array_push($aImagesCreated, $folder . '/' . $rowTPE['id_tpeid'] . '.png');
-					$background .= 'url(https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
+					$background .= 'url('.$CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathApp'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
 				
 					$content = '';
 					break;
@@ -259,9 +259,12 @@
 //					}
 
 					$addClass = 'align' . $rowTPE['alignment'];
-//					$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
+//					$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'assets/' . md5($rowsPC[0]['filesys_filename']) . '.png"></div>';
 				
-					$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					
+				
+					
 					break;
 	
 				// Partner contact
@@ -298,7 +301,8 @@
 					if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span>' . $rowsPC[0]['url'] . '</span>');
 
 					$content = '<div class="partnerContactCombination contactalignleft">';
-					$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content .= '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+				
 					$content .= '<div class="dummyPartnercontact"><span>';
 					$content .= implode('<span class="contactDelimiter"></span>', $addrTemp1);
 					$content .= '</span>';
@@ -316,7 +320,7 @@
 				case '19':
 					$aConAdd = json_decode($content_add, true);
 					$url = (isset($aConAdd['calltoactionurl'])) ? $aConAdd['calltoactionurl'] : '';
-					if(substr($url, 0, 4) != 'http') $url = 'http://' . $url;
+					if(substr($url, 0, 4) != 'https') $url = 'https://' . $url;
 	
 					$content = '<table border="0" cellpadding="0" cellspacing="0" class="buttonCalltoaction"><tr><td><a href="' . $url . '">' . $content . '</a></td></tr></table>';
 					break;
@@ -344,7 +348,7 @@
 	$handle = fopen($folder .'/content.html', 'w');
 	fwrite($handle, $html);
 	fclose($handle);
-			
+	
 			
 	$pdfOpt = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathTools'] . 'wkhtmltox/bin/wkhtmltopdf ';
 	$pdfOpt .= '--page-width ' . $aPageDimension['mediabox'][2] . 'pt ';
@@ -358,7 +362,7 @@
 	system($pdfOpt);
 	
 	// convert to cmyk
-	$convCmyk = 'gs ';
+	/*$convCmyk = 'gs ';
 	$convCmyk .= '-o ';
 	$convCmyk .= '"' . $folder . '/content_cmyk.pdf" ';
 	$convCmyk .= '-sDEVICE=pdfwrite ';
@@ -374,14 +378,51 @@
 	$convCmyk .= '1>&2 ';
 	system($convCmyk);
 	unlink($folder . '/content.pdf');
-	rename($folder . '/content_cmyk.pdf', $folder . '/content.pdf');
+	rename($folder . '/content_cmyk.pdf', $folder . '/content.pdf');*/
 
-
+	
+	
 	$base = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathMedia'] . $mediafile;
 	$overlay = '"' . $folder . '/content.pdf"';
-	system('pdftk ' . $base . ' multistamp ' . $overlay . '  output "' . $folder . '/output.pdf"');
+	
+	//system('pdftk ' . $base . ' multistamp ' . $overlay . '  output "' . $folder . '/output.pdf"');
+	
+	//echo "FOLDER :: ".$folder."<BR>";
+	//echo "OVERLAY :: ".$overlay."<BR>";
+	//echo "BASE :: ".$base."<BR>";
 	
 	
+	
+	system('java -jar '.$CONFIG['system']['directoryRoot'].'pdfbox-app-2.0.16.jar PDFSplit "' . $folder . '/content.pdf"');
+	/*echo 'java -jar '.$CONFIG['system']['directoryRoot'].'pdfbox-app-2.0.16.jar PDFSplit "' . $folder . '/content.pdf"';*/
+	//echo "<br>";
+	
+	if (is_dir($folder)) 
+	{
+		if ($dh = opendir($folder)) 
+		{
+			
+			while (($file = readdir($dh)) !== false) 
+			{
+				//echo "filename: .".$file."<br />";
+				if(strpos($file, '-') !== false) 
+				{
+					$pageno = preg_replace('/[^0-9]/', '', $file);
+					$overlaystr .=' -page '.$pageno.' "'.$folder.'/'.$file.'"';
+					//array_push($aImagesCreated, $folder.'/'.$file);
+				}
+			}
+        closedir($dh);
+		}
+	}
+	//echo "OVERLAYSTR :: ".$overlaystr;
+	//echo "<br>";
+
+	system('java -jar '.$CONFIG['system']['directoryRoot'].'pdfbox-app-2.0.16.jar OverlayPDF ' . $base . ' ' . $overlaystr . ' -position foreground "' . $folder . '/output.pdf"');
+	//echo 'java -jar '.$CONFIG['system']['directoryRoot'].'pdfbox-app-2.0.16.jar OverlayPDF ' . $base . ' ' . $overlaystr . ' "' . $folder . '/output.pdf"';
+	//echo "<BR>";
+	//echo "BASE :: ".$base;
+	//echo "\nOVERLAYSTR :: ".$overlaystr;
 	$dirTarget = $CONFIG['system']['directoryRoot'] . 'assetimages/assets_thumbnails/';
 	$fileThumbnail = str_pad($varSQL['id_asid'], 6 ,'0', STR_PAD_LEFT) . '-' . $CONFIG['user']['id_countid'] . '-' . $CONFIG['user']['id_langid'] . '-' . md5($varSQL['id_asid'] . '_asset');
 	system('pdftoppm -png -r 96 -cropbox -aa yes -scale-to 400 -f 1 -l 1 "' . $folder . '/output.pdf" ' . $folder . '/' . $fileThumbnail);

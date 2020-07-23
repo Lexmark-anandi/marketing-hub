@@ -38,7 +38,7 @@ $CONFIG['activeSettings']['appLanguage'] = strtolower($CONFIG['user']['country']
 $CONFIG['activeSettings']['id_countid'] = $CONFIG['user']['id_countid'];
 $CONFIG['activeSettings']['id_langid'] = $CONFIG['user']['id_langid'];
 $CONFIG['activeSettings']['ovPage'] = 1;
-$CONFIG['activeSettings']['ovRange'] = $CONFIG['system']['ovRange'][0];
+$CONFIG['activeSettings']['ovRange'] = $CONFIG['system']['ovRange'][2];
 $CONFIG['activeSettings']['ovType'] = 'grid';
 
  

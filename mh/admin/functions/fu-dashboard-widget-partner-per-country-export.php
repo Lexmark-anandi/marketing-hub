@@ -24,7 +24,7 @@ $aColor = array('black' => 'FF000000', 'lead_green' => 'FF00C425', 'light_green'
 $out = array();
 $out['path'] = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathAdmin'] . 'tmp/';
 $out['folder'] = $CONFIG['user']['id'] . '-' . str_replace(' ', '_', microtime());
-$out['filename'] = 'Assets-per-Type' . $now2 . '.xlsx';
+$out['filename'] = 'Partners-per-Country' . $now2 . '.xlsx';
 $out['filesys_filename'] = 'export.xlsx';
 $out['thumbnail'] = ''; 
 

@@ -230,14 +230,14 @@
 			case '15': // Fileupload
 				$addClass = 'align' . $rowTPE['alignment'];
 				
-				$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+				$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
 				break;
 
 			// Partner logo
 			case '11':
 				$addClass = 'align' . $rowTPE['alignment'];
 				
-				$content = 'https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'];
+				$content = 'https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'];
 				break;
 
 			// Partner contact
@@ -296,7 +296,7 @@
 				if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span class="pc_single pc_url"><a href="http://' . $rowsPC[0]['url'] . '">' . $rowsPC[0]['url'] . '</a></span>');
 
 				$content = '<div class="partnerContactCombination contactalignleft">';
-				$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+				$content .= '<div class="componentPartnerlogo"><img src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 				$content .= '<div class="dummyPartnercontact">';
 				$content = '<p align="left">';
 				$content .= implode('<br />', $addrTemp1);
@@ -485,13 +485,13 @@
 					
 					$searchpattern = '/src="(.*)"/siU';
 					preg_match ($searchpattern, $rowS['image'], $match);
-					$content = 'https://pashrwrtapp001.lex1.lexmark.com' . $match[1];
+					$content = 'https://webapps.lexmark-europe.com' . $match[1];
 //					
-//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
+//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
 //
 //echo $match[1];					
 //				
-//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
+//					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
 					break;
 				
 				// PN
@@ -571,7 +571,7 @@
 				case '15': // Fileupload
 					$addClass = 'align' . $rowTPE['alignment'];
 				
-					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+					$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
 					break;
 	
 				// Partner logo
@@ -638,7 +638,7 @@
 					if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span class="pc_single pc_url"><a href="http://' . $rowsPC[0]['url'] . '">' . $rowsPC[0]['url'] . '</a></span>');
 	
 					$content = '<div class="partnerContactCombination contactalignleft">';
-					$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+					$content .= '<div class="componentPartnerlogo"><img src="https://webapps.lexmark-europe.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 					$content .= '<div class="dummyPartnercontact">';
 					$content = '<p align="left">';
 					$content .= implode('<br />', $addrTemp1);
@@ -690,11 +690,16 @@
 	$handle = fopen($folder .'/content.html', 'w');
 	fwrite($handle, $body);
 	fclose($handle);
+	
+	$newbody = str_replace('https://webapps.lexmark-europe.com/mh/',$CONFIG['system']['directoryRoot'],$body);
+	$handle = fopen($folder .'/newcontent.html', 'w');
+	fwrite($handle, $newbody);
+	fclose($handle);
 
 
 	$imgOpt = $CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathTools'] . 'wkhtmltox/bin/wkhtmltoimage ';
 	$imgOpt .= '--format png ';
-	$imgOpt .= '"' . $folder . '/content.html" ';
+	$imgOpt .= '"' . $folder . '/newcontent.html" ';
 	$imgOpt .= '"' . $folder . '/content.png" ';
 	system($imgOpt);
 	
@@ -715,6 +720,7 @@
 
 	unlink($folder . '/content.png');
 	unlink($folder . '/content.html');
+	unlink($folder . '/newcontent.html');
 	
 
 

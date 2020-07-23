@@ -482,7 +482,7 @@ foreach($rowsT as $rowT){
 	$objPHPExcel->getActiveSheet()->getCell($aCols[$col].$row)->setValueExplicit($rowT['published_at'], PHPExcel_Cell_DataType::TYPE_STRING);
 	$col++;
 }
-
+/*
 // promotions
 $queryT = $CONFIG['dbconn'][0]->prepare('
 									SELECT ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid,
@@ -571,7 +571,7 @@ foreach($rowsT as $rowT){
 $maxRow = $objPHPExcel->getActiveSheet()->getHighestDataRow(); 
 $maxCol = $objPHPExcel->getActiveSheet()->getHighestDataColumn(); 
 
-$objPHPExcel->getActiveSheet()->setAutoFilter($aCols[0].'1:'.$maxCol.$maxRow);
+$objPHPExcel->getActiveSheet()->setAutoFilter($aCols[0].'1:'.$maxCol.$maxRow);*/
 ###########################################
 
 

@@ -180,7 +180,7 @@
 								case '12': // Product image
 									$addClass = 'align' . $rowTPE['alignment'];
 									
-									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot']. '', $content);
 									break;
 									
 								case '4': // PN
@@ -242,14 +242,14 @@
 								case '15': // Fileupload
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot']. '', $content);
 									break;
 					
 								// Partner logo
 								case '11':
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+									$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot']. 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 									break;
 					
 								// Partner contact
@@ -286,7 +286,7 @@
 									if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span>' . $rowsPC[0]['url'] . '</span>');
 				
 									$content = '<div class="partnerContactCombination contactalignleft">';
-									$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+									$content .= '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot']. 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 									$content .= '<div class="dummyPartnercontact"><span>';
 									$content .= implode('<span class="contactDelimiter"></span>', $addrTemp1);
 									$content .= '</span>';
@@ -494,7 +494,7 @@
 								case '12':
 									$addClass = 'align' . $rowTPE['alignment'];
 								
-									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $rowS['image']);
+									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot']. '', $rowS['image']);
 									break;
 								
 								// PN
@@ -574,14 +574,14 @@
 								case '15': // Fileupload
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+									$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot']. '', $content);
 									break;
 
 								// Partner logo
 								case '11':
 									$addClass = 'align' . $rowTPE['alignment'];
 				
-									$content = '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+									$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot']. 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 									break;
 					
 								// Partner contact
@@ -618,7 +618,7 @@
 									if(trim($rowsPC[0]['url']) != '') array_push($addrTemp2, '<span>' . $rowsPC[0]['url'] . '</span>');
 				
 									$content = '<div class="partnerContactCombination contactalignleft">';
-									$content .= '<div class="componentPartnerlogo"><img src="https://pashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
+									$content .= '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot']. 'media/' . $rowsPC[0]['filesys_filename'] . '"></div>';
 									$content .= '<div class="dummyPartnercontact"><span>';
 									$content .= implode('<span class="contactDelimiter"></span>', $addrTemp1);
 									$content .= '</span>';

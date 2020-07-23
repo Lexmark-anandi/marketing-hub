@@ -129,67 +129,11 @@ foreach($rowsC as $rowC){
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang = (:lang)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
 												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_promid = (:nul)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_campid = (:nul)
+												GROUP BY ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid
 											');
 		$queryN->bindValue(':count', $rowC['id_countid'], PDO::PARAM_INT);
 		$queryN->bindValue(':lang', $rowC['id_langid'], PDO::PARAM_INT);
 		$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);
-		$queryN->bindValue(':nul', 0, PDO::PARAM_INT);
-		$queryN->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-		$queryN->execute();
-		$rowsN = $queryN->fetchAll(PDO::FETCH_ASSOC);
-		$numN = $queryN->rowCount();
-		$numAll += $numN;
-
-		$queryN = $CONFIG['dbconn'][0]->prepare('
-											SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid
-												
-											FROM ' . $CONFIG['db'][0]['prefix'] . '_assets_uni
-											
-											INNER JOIN ' . $CONFIG['db'][0]['prefix'] . '_templates_uni
-												ON ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_count = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count
-													AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_lang = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang
-												 	AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid
-
-											WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count = (:count)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang = (:lang)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_promid = (:nul)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_campid <> (:nul)
-											');
-		$queryN->bindValue(':count', $rowC['id_countid'], PDO::PARAM_INT);
-		$queryN->bindValue(':lang', $rowC['id_langid'], PDO::PARAM_INT);
-		$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);
-		$queryN->bindValue(':nul', 0, PDO::PARAM_INT);
-		$queryN->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
-		$queryN->execute();
-		$rowsN = $queryN->fetchAll(PDO::FETCH_ASSOC);
-		$numN = $queryN->rowCount();
-		$numAll += $numN;
-
-		$queryN = $CONFIG['dbconn'][0]->prepare('
-											SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid
-												
-											FROM ' . $CONFIG['db'][0]['prefix'] . '_assets_uni
-											
-											INNER JOIN ' . $CONFIG['db'][0]['prefix'] . '_templates_uni
-												ON ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_count = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count
-													AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_lang = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang
-												 	AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_tempid = ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_tempid
-
-											WHERE ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_count = (:count)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_lang = (:lang)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.del = (:nultime)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_templates_uni.id_caid = (:id_caid)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_promid <> (:nul)
-												AND ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_campid = (:nul)
-											');
-		$queryN->bindValue(':count', $rowC['id_countid'], PDO::PARAM_INT);
-		$queryN->bindValue(':lang', $rowC['id_langid'], PDO::PARAM_INT);
-		$queryN->bindValue(':id_caid', $rowAC['id_caid'], PDO::PARAM_INT);
-		$queryN->bindValue(':nul', 0, PDO::PARAM_INT);
 		$queryN->bindValue(':nultime', '0000-00-00 00:00:00', PDO::PARAM_STR);
 		$queryN->execute();
 		$rowsN = $queryN->fetchAll(PDO::FETCH_ASSOC);
@@ -491,7 +435,7 @@ foreach($rowsT as $rowT){
 	$objPHPExcel->getActiveSheet()->getCell($aCols[$col].$row)->setValueExplicit($rowT['bsd'], PHPExcel_Cell_DataType::TYPE_STRING);
 	$col++;
 }
-
+/*
 // promotions
 $queryT = $CONFIG['dbconn'][0]->prepare('
 									SELECT ' . $CONFIG['db'][0]['prefix'] . '_assets_uni.id_asid,
@@ -595,7 +539,7 @@ $maxCol = $objPHPExcel->getActiveSheet()->getHighestDataColumn();
 
 $objPHPExcel->getActiveSheet()->setAutoFilter($aCols[0].'1:'.$maxCol.$maxRow);
 ###########################################
-
+*/
 
 
 $objPHPExcel->setActiveSheetIndex(0);

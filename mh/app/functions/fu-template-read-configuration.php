@@ -43,6 +43,8 @@ if($varSQL['id_campid'] > 0){
 	$rowsPr = $queryPr->fetchAll(PDO::FETCH_ASSOC);
 	$numPr = $queryPr->rowCount();
 	
+	
+	
 	foreach($rowsPr as $rowPr){ 
 		array_push($aCondProd, $rowPr['id_pid']);
 	}

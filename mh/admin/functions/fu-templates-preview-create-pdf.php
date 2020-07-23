@@ -207,7 +207,7 @@
 					case '15':
 						$addClass = 'align' . $rowTPE['alignment'];
 					
-						$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . '', $content);
+						$content = str_replace('src="' . $CONFIG['system']['directoryInstallation'] . '', 'src="'.$CONFIG['system']['directoryRoot'] . '', $content);
 	
 						$htmlImg = $htmlHead;
 						$htmlImg .= '<body>';
@@ -234,7 +234,7 @@
 						system($imgOpt);
 						
 						array_push($aImagesCreated, $folder . '/' . $rowTPE['id_tpeid'] . '.png');
-						$background .= 'url(https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . $CONFIG['system']['pathAdmin'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
+						$background .= 'url('.$CONFIG['system']['directoryRoot'] . $CONFIG['system']['pathAdmin'] . 'tmp/' . $foldername. '/' . $rowTPE['id_tpeid'] . '.png),';
 					
 						$content = '';
 						break;
@@ -243,7 +243,7 @@
 					case '11':
 						$addClass = 'align' . $rowTPE['alignment'];
 				
-						$content = '<div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div>';
+						$content = '<div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'custom/admin/img/dummy-logo.png"></div>';
 						break;
 				
 					// Partner contact
@@ -255,7 +255,7 @@
 							
 					// Partner contact / logo combination
 					case '16':
-						$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="https://qashrwrtapp001.lex1.lexmark.com' . $CONFIG['system']['directoryInstallation'] . 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
+						$content = '<div class="partnerContactCombination contactalignleft"><div class="componentPartnerlogo"><img src="'.$CONFIG['system']['directoryRoot'] . 'custom/admin/img/dummy-logo.png"></div><div class="dummyPartnercontact"><span><span>Company Name</span><span class="contactDelimiter"></span><span>Street</span><span class="contactDelimiter"></span><span>Zip City</span></span><span><span>+49 69 / 12 34 56 78</span><span class="contactDelimiter"></span><span>info@company.com</span><span class="contactDelimiter"></span><span>www.domain.com</span></span></div></div>';
 						break;
 			
 					// Color area
