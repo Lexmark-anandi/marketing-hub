@@ -195,7 +195,7 @@
 	opacity: 0.4;
 }
 .formComponentPreviewComponents {
-	position: absolute;
+	position: relative;
     top: 0px;
     left: 0px;
 	overflow: hidden;
